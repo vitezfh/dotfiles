@@ -1,0 +1,61 @@
+#!/bin/sh
+
+# Spacer string
+s=' '
+
+time=$(date "+%Y-%m-%d  w%-V  %H:%M ")
+
+battery=$(acpi | awk '{print $4}' | xargs)
+battery_status=$(acpi | grep -o discharging)
+
+#brightness=$(brightnessctl get)
+
+song=$(mpc --format=%file% current)
+song="${song##*/}"
+
+#if [ ${#song} -gt 65 ]; then
+#	song=$(cut <<< $song -c1-65); 
+#fi
+
+player_status=$(mpc status | grep -o playing || mpc status | grep -o paused)
+
+volume=$(pulsemixer --get-volume | sed 's/ /% /g')%
+audio_is_muted=$(pulsemixer --get-mute)
+
+network=$(ip route get 1.1.1.1 | grep -Po '(?<=dev\s)\w+' | cut -f1 -d ' ')
+#ping=$(ping -c 1 1.1.1.1 | tail -1| awk '{print $4}' | cut -d '/' -f 2 | cut -d '.' -f 1)
+
+language=$(swaymsg -r -t get_inputs | awk '/1:1:AT_Translated_Set_2_keyboard/;/xkb_active_layout_name/' | grep -A1 '\b1:1:AT_Translated_Set_2_keyboard\b' | grep "xkb_active_layout_name" | awk -F '"' '{print $4}')
+
+weather=$(< $HOME/.cache/weather_status)
+
+loadavg_5min=$(cat /proc/loadavg | awk -F ' ' '{print $2}')
+
+ping_counter=$(< $HOME/.cache/ping_status)
+
+if [ "$battery_status" = "discharging" ]; then battery_pluggedin='🔋'
+else battery_pluggedin='🗲'; fi
+
+if ! [ $network ]; then network_active="⛔"; else network_active="⇆"; fi
+
+if [ $player_status = "playing" ]; then song_status="🎝 | ▶ $song |$s"
+elif [ $player_status = "paused" ]; then song_status="" #song_status="🎝 | ⏸ $song | $s"
+else song_status=""; fi
+
+if [ $audio_is_muted = 1 ]; then audio_active='🔇'; else audio_active='🔊'; fi
+
+#if [ $brightness -gt 22 ]; then	brightness_glyph=🌞; elif [ $brightness -gt 10 ]
+#then brightness_glyph="🔆"; else brightness_glyph=🌙; fi
+
+# 💪 💰 🔋 📶 🔈🔉🔊 🔇 🗛  🔌 🔥 💤 
+echo "$song_status \
+$weather $s \
+$audio_active $volume $s \
+$battery_pluggedin $battery $s \
+🔥 $loadavg_5min$s \
+$network_active $network ($ping_counter ms) $s \
+$time\
+$holiday"
+
+
+#$brightness_glyph $brightness% $s \

@@ -1,0 +1,6 @@
+
+yt video, youtube-viewer
+yt audio, youtube-viewer -n
+fetch yt vid, youtube-dl --add-metadata -i
+fetch yt audio, youtube-dl -x -f bestaudio/best --add-metadata -i
+

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+chosen=$(find ~/Pictures/Wallpapers -type f | shuf | fzf)
+output=$(swaymsg -p -t get_outputs | grep focused | awk '{print $2}')
+palette=($(exec python "$HOME/.config/sway/scripts/colorpicker.py" "$chosen"))
+
+swaymsg bar "bar-0" colors statusline ${palette[0]}
+swaymsg bar "bar-0" colors focused_workspace ${palette[0]} ${palette[1]} ${palette[4]}
+swaymsg bar "bar-0" colors inactive_workspace ${palette[1]} ${palette[0]} ${palette[0]}
+swaymsg client.focused ${palette[0]} ${palette[1]} ${palette[2]} ${palette[3]} ${palette[4]}
+
+cp "$chosen" .cache/wallpapers/$output && swaymsg output $output bg $chosen fill & notify-send -t 4500 "Changed background to:
+
+$chosen" & sleep 0.2 && exit

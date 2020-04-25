@@ -1,0 +1,88 @@
+# # # # # # # # # # # # # # # # # # # # # #
+#
+#
+#        SSS
+#       S   S
+#       S
+#       S      S     S   SSSS   S    S
+#        SSS   S     S       S  S    S
+#           S  S  S  S   SSSSS  S    S
+#           S  S  S  S  S    S  S   SS
+#       S   S  S  S  S  S   SS   SSS S
+#        SSS    SS SS    SSS S       S
+#                               S    S
+#                                SSSS
+#
+# 
+### VARIABLES
+#
+# Logo key and alt key
+set $mod Mod4
+set $alt Mod1
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Variable font size for terminal (see script to configure: TODO: make configuration availible through arguments)
+set $font_size sh .config/sway/scripts/font-size-chooser eDP-1
+
+# terminal emulator
+set $term kitty -o font_size=$($font_size)
+
+# Browser
+set $browser firefox
+
+# Fuzzy finder
+#set $fzf fzf --ansi --color='bg:#4B4B4B,bg+:#3F3F3F,info:#BDBB72,border:#6B6B6B,spinner:#98BC99' \
+#                       --color='hl:#719872,fg:#D9D9D9,header:#719872,fg+:#D9D9D9' \
+#                       --color='pointer:#E12672,marker:#E17899,prompt:#98BEDE,hl+:#98BC99'
+set $fzf fzf -i --cycle
+
+# Application launcher
+set $menu $term --class "simplemenu"
+
+# Translate tool
+set $translator trans
+
+# Notification Daemon
+exec pkill mako
+#exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
+
+# Borders and gaps
+default_border pixel 1
+default_floating_border normal
+hide_edge_borders smart
+
+#smart_gaps on
+#gaps inner 1
+
+####################################################
+
+
+    ###            ##
+   #   #            #
+   #                #
+   #       ####     #     ####   # ##   ####
+   #      #    #    #    #    #   #    #    #
+   #      #    #    #    #    #   #     ##
+   #      #    #    #    #    #   #       ##
+   #   #  #    #    #    #    #   #    #    #
+    ###    ####   #####   ####    #     ####
+
+
+####################################################
+
+# Colors		border   	bg pix		text		indi		childborder
+client.focused          #1c2829a0 	#cccccc10 	#ffffff 	#2f343aaa
+client.focused_inactive #333333 	#000000b6 	#ffffff 	#484e50
+client.unfocused        #333333 	#000000a6 	#888888 	#292d2e
+client.urgent           #2f343a 	#900000 	#ffffff 	#900000
+client.placeholder      #000000		#0c0c0c 	#ffffff 	#000000
+
+# Include your config files here
+include /etc/sway/config.d/*
+include $HOME/.config/sway/config.d/*
+exec xrdb -load ~/.Xresources

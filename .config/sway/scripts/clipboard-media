@@ -1,0 +1,29 @@
+#!/bin/bash
+
+clipboard=$(wl-paste)
+
+notfication_time=4200
+
+if grep -E "[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?" <<< $clipboard; then
+	operation () {
+		wget $clipboard -O -
+	}
+	param="-"
+
+else notify-send -t $(eval $($notification_time * 2)) "Content not recognized:
+$clipboard" & exit
+fi
+
+if true; then
+	if grep -i 'youtube\|youtu.be' <<< $clipboard; then
+		youtube-dl --socket-timeout 3.5 $(wl-paste) -o - | mpv - & notify-send -t 3500 "Opening youtube video: $clipboard in mpv" & disown
+	elif grep -i '\.jpeg\|\.jpg\|\.png\|\.gif' <<< $clipboard; then
+		operation | imv $param & notify-send -t $notification_time "Opening image: $clipboard" & disown
+	elif grep -i '\.webm\|\.mp4\|\.wmv\|\.mpeg\|\.mpg\|\.mkv\|\.m4v\|\.flv' <<< $clipboard; then
+		operation | mpv - & notify-send -t $notification_time "Opening video in mpv: $clipboard" & disown
+	elif grep -i '\.wav\|\.mp3\|\.flac\|\.m4a\|\.aac\|\.ogg\|\.wma\|\.ape\|\.wv' <<< $clipboard; then
+        	operation | mpv - & notify-send -t $notification_time "Opening audio in mpv: $clipboard" & disown
+	fi
+else notify-send "Content not recognized:
+$clipboard"
+fi

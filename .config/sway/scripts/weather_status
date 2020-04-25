@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Custom ?format=%[x] options
+#   c    Weather condition,
+#   C    Weather condition textual name,
+#   h    Humidity,
+#   t    Temperature,
+#   w    Wind,
+#   l    Location,
+#   m    Moonphase 🌑🌒🌓🌔🌕🌖🌗🌘,
+#   M    Moonday,
+#   p    precipitation (mm),
+#   o    Probability of Precipitation,
+#   P    pressure (hPa),
+
+while true; 
+do 
+	data="$(curl -sm 1 --fail 'wttr.in/Siegsdorf?format=%c+%C+%t+%o+%p')"
+	if [ "$data" = "" ]
+	then true
+	else echo "$data" > $HOME/.cache/weather_status
+	fi
+	sleep 280
+done

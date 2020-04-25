@@ -1,0 +1,31 @@
+# Menus, etc.
+for_window [app_id="simplemenu"] {
+	floating enable
+        resize set 800 330
+	move position 350 720
+}
+
+for_window [app_id="translator"] {
+        floating enable
+        resize set 800 330
+        move position 350 720
+}
+
+for_window [class="webcam"] {
+        floating enable
+        resize set 768 432
+        move position 1150 620
+}
+
+# Media
+assign [app_id="mplayer"] workspace 10 
+#assign [app_id="mpv"] workspace mpv
+#assign [app_id="player"] workspace music
+#assign [app_id="imv"] workspace music
+#assign [app_id="lyrics"] workspace music
+
+# Phone screen stream
+for_window [app_id="scrcpy"] {
+	floating enable
+        resize set 488 1000
+}

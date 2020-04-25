@@ -1,0 +1,53 @@
+# BBBBB
+#  B   B
+#  B   B
+#  B   B   BBBB   B BB
+#  BBBB        B   B
+#  B   B   BBBBB   B
+#  B   B  B    B   B
+#  B   B  B   BB   B
+# BBBBB    BBB B   B
+# 
+#
+# man 5 sway-bar
+
+#exec_always sh .config/sway/scripts/ping_status
+#exec_always sh .config/sway/scripts/weather_status
+#bar {
+#   position top
+#   output eDP-1
+#   # When the status_command prints a new line to stdout, swaybar updates.
+#   # The default just shows the current date and time.
+#   status_command while sh .config/sway/scripts/status; do sleep 2; done
+#   font Hack 13
+#
+#    colors {
+#       statusline #ffffff
+#       background #000000aa
+#      
+#       focused_workspace #000000aa #dd555590 #000000aa
+#       inactive_workspace #000000aa #000000bb #aaaaaa99
+#       urgent_workspace #000000bb #FFFF00cc #000000bb
+#       binding_mode #000000bb #dd5555aa #000000bb
+#       }
+#}
+
+#bar {
+#position top
+#output HDMI-A-2
+#
+#   colors {
+#       statusline #ffffff
+#       background #000000aa
+#       
+#       focused_workspace #000000aa #dd555590 #000000aa
+#       inactive_workspace #000000aa #000000bb #aaaaaa99
+#       urgent_workspace #000000bb #FFFF00cc #000000bb
+#       binding_mode #000000bb #dd5555aa #000000bb
+#       }
+#}
+
+bar {
+	swaybar_command waybar
+}
+
