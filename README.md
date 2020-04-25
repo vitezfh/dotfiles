@@ -1,5 +1,7 @@
 # dotconfig
-Some of my dotconfig files, for your ricing needs
+Some of my .config files, for your ricing needs
+
+swaywm, waybar and kitty
 
 ![Screencap1](/screenshots/screenshot1.png)
 
