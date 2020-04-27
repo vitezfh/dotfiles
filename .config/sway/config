@@ -49,7 +49,8 @@ set $translator trans
 
 # Notification Daemon
 exec pkill mako
-#exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
+exec_always dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
 
 # Borders and gaps
 default_border pixel 1
