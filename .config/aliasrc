@@ -8,7 +8,7 @@ alias corona='curl "https://corona-stats.online/Germany?source=2" -Ss | grep Ger
 alias corona-old='curl "https://corona-stats.online/Germany" -Ss | grep Germany -B 3 -A 1'
 
 # WOL
-alias wake-tower="wol --ipaddr=169.254.214.46 '4c:cc:6a:ff:18:34'"
+alias wake-tower="wol --ipaddr=tower '4c:cc:6a:ff:18:34'"
 
 # Voidlinux xbps
 alias \
@@ -39,7 +39,7 @@ alias \
 	yv="youtube-viewer" \
 	yva="youtube-viewer -n" \
 	ffmpeg="ffmpeg -hide_banner" \
-	lolcat="lolcat -l"
+	lolcat="lolcat -l" \
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \

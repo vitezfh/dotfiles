@@ -217,6 +217,9 @@ mode "$mode_system" {
 }
 bindsym $alt+Shift+e mode "$mode_system"
 
+# Caps
+bindsym Caps_Lock true
+
 # Rotate your screen
 bindsym $mod+Shift+Up exec sh -c "swaymsg output $(swaymsg -p -t get_outputs | grep focused | awk \'{print $2}\') transform 180"
 bindsym $mod+Shift+Down exec sh -c "swaymsg output $(swaymsg -p -t get_outputs | grep focused | awk \'{print $2}\') transform 0"
