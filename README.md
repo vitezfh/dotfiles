@@ -1,5 +1,5 @@
-# dotconfig
-Selection of my .config files for your ricing needs:
+# dotfiles - wayland
+Selection of my .files files for your ricing needs:
 
 swaywm, waybar and kitty
 
