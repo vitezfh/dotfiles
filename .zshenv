@@ -1,0 +1,12 @@
+export QT_QPA_PLATFORMTHEME=qt5ct
+export ZDOTDIR="$HOME/.config/zsh/"
+export GNUPGHOME="$HOME/.config/gnupg/"
+export PIP_REQUIRE_VIRTUALENV=true
+export GTK_THEME="Arc-Dark"
+export KITTY_ENABLE_WAYLAND=1
+export GOBIN=/usr/local/bin
+export _JAVA_AWT_WM_NONREPARENTING=1
+export XDG_CONFIG_HOME="${HOME}/.config/"
+#export GDK_BACKEND=wayland
+#export QT_QPA_PLATFORM=wayland-egl
+#export SDL_VIDEODRIVER=wayland
