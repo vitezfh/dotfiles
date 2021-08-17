@@ -1,0 +1,259 @@
+#####################################################################################
+#
+# K    K                  K                           K
+# K   K                   K         K                 K    K
+# K  K                    K                           K
+# K K      KKKK   K    K  K KKK    KK    K KKK    KKK K   KK     KKK K   KKKK
+# KK      K    K  K    K  KK   K    K    KK   K  K   KK    K    K   K   K    K
+# K K     KKKKKK  K    K  K    K    K    K    K  K    K    K    K   K    KK
+# K  K    K       K   KK  K    K    K    K    K  K    K    K     KKK       KK
+# K   K   K    K   KKK K  KK   K    K    K    K  K   KK    K    K       K    K
+# K    K   KKKK        K  K KKK   KKKKK  K    K   KKK K  KKKKK   KKKK    KKKK
+#                K    K                                        K    K
+#                 KKKK                                          KKKK
+#
+# Basics:
+# Start a terminal
+bindsym $mod+Return nop 
+bindsym --release $mod+Return exec $term
+# Reload the configuration file
+bindsym $alt+Shift+Escape reload
+
+bindsym $alt+Shift+Space "$HOME/.config/sway/scripts/ibus"
+
+bindsym --release $alt+F1 exec $lock
+bindsym XF86ScreenSaver exec $lock
+# Kill focused window
+bindsym --release $alt+q kill
+
+#Wallpaper changers
+bindsym --release $mod+d exec $menu bash -c $HOME/.scripts/change_background
+bindsym --release $mod+Shift+d exec $HOME/.scripts/change_background_imv
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $alt normal
+
+# SEE SYSTEM MODE MENU FOR THIS: bindsym --release $mod+$alt+z exec $lock
+# Exit sway (logs you out of your Wayland session)
+#bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+
+####### Start your launcher
+# for zsh (and maybe Korn?)
+set $launcher "whence -pm '*' | xargs -i basename {} | $fzf | xargs swaymsg exec --"
+# for bash
+# set $launcher "compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec"
+bindsym --release $mod+x exec $menu zsh -c $launcher
+
+bindsym --release $mod+tab exec $menu zsh
+# Also quick "launcher" key combos for apps (and their classic counterparts):
+
+# Browser
+bindsym --release $mod+i exec $browser --profile-directory='Profile 1'
+#bindsym --release $mod+p exec $browser --private-window
+bindsym --release $mod+p exec $browser --profile-directory='Profile 2'
+
+# Ytfzf
+bindsym --release $mod+y exec yee
+
+# Music player controller:
+bindsym $mod+0 exec "$term --class mplayer -T mplayer -e ncmpcp
+
+# Translator
+#bindsym --release $alt+t exec "$term -o font_size=$($font_size) --class translator -e $translator -I -show-alternatives y -show-dictionary n -show-original-phonetics n -show-original n -show-languages n -show-prompt-message n -show-translation n"
+bindsym --release $alt+t exec "notify-send $(trans -b $(wl-paste -p))"
+
+####### Media/FN Key/Other Single key bindings:
+# Brightness
+bindsym XF86MonBrightnessUp exec 'brightnessctl set +2%'
+bindsym XF86MonBrightnessDown exec 'brightnessctl -n set 2%-'
+bindsym Shift+XF86MonBrightnessDown exec 'brightnessctl set 0'
+
+# Music player controller bindings:
+bindsym XF86AudioPlay exec "mpc toggle"
+bindsym $alt+Down exec "mpc toggle"
+bindsym XF86AudioStop exec "mpc stop"
+bindsym XF86AudioPrev exec "mpc prev"
+bindsym $alt+Left exec "mpc prev"
+bindsym XF86AudioNext exec "mpc next"
+bindsym $alt+Right exec "mpc next"
+# Audio Control:
+bindsym XF86AudioMicMute exec "pulsemixer --id source-1 --toggle-mute"
+bindsym XF86AudioMute exec "pulsemixer --toggle-mute"
+bindsym XF86AudioLowerVolume exec "pulsemixer --change-volume -3 && pulsemixer --max-volume 120"
+bindsym XF86AudioRaiseVolume exec "pulsemixer --change-volume +3 && pulsemixer --max-volume 120"
+bindsym $alt+Comma exec "pulsemixer --change-volume -3 && pulsemixer --max-volume 120"
+bindsym $alt+Period exec "pulsemixer --change-volume +3 && pulsemixer --max-volume 120"
+# Misc
+#bindsym XF86Search exec 'firefox --new-tab "googl.com/#q=$(xclip -out -selection primary)"'
+bindsym XF86Search exec 'firefox --new-tab "$(wl-paste --primary)"'
+bindsym XF86Tools exec $term
+bindsym XF86LaunchA exec $term -e pulsemixer
+#bindsym XF86Explorer exec "xclip -out -selection primary | xargs firefox --new-tab"   
+# Webcam
+bindsym $mod+Shift+w exec "mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --x11-name='webcam' --title='webcam' --no-cache --profile=low-latency --untimed /dev/video2 --vf='hflip'"
+# Visualizer
+# bindsym $mod+c exec pkill glava; exec sleep 1 && glava -e red.glsl
+# bindsym $mod+v exec pkill glava; exec sleep 1 && glava -e rc.glsl
+# bindsym $mod+b exec pkill glava; exec sleep 1 && glava -e b.glsl
+
+#
+# TODO: Execute on clipboard:
+#
+#bindsym --release $mod+m exec bash "$HOME/.config/sway/scripts/clipboard-media"
+# This one directly takes the current page from firefox (with vim vixen plugin) and
+# sends it to the script
+#bindsym --release $mod+y exec bash "$HOME/.config/sway/scripts/media-quickmenu"
+
+#
+# Moving around:
+#
+# Move your focus around
+bindsym $alt+$left focus left
+bindsym $alt+$down focus down
+bindsym $alt+$up focus up
+bindsym $alt+$right focus right
+
+bindsym $alt+a focus left
+bindsym $alt+s focus down
+bindsym $alt+w focus up
+bindsym $alt+d focus right
+
+# Move the focused window with the same
+bindsym $alt+Shift+$left move left
+bindsym $alt+Shift+$down move down
+bindsym $alt+Shift+$up move up
+bindsym $alt+Shift+$right move right
+
+# Move workspaces between outputs, with arrow keys
+bindsym $alt+Shift+a move workspace to output left
+bindsym $alt+Shift+s move workspace to output down
+bindsym $alt+Shift+w move workspace to ouput up
+bindsym $alt+Shift+d move workspace to output right
+
+# Move workspaces between outputs, with arrow keys
+bindsym $alt+Shift+Left move workspace to output left
+bindsym $alt+Shift+Down move workspace to output down
+bindsym $alt+Shift+Up move workspace to ouput up
+bindsym $alt+Shift+Right move workspace to output right
+#
+# Workspaces:
+#
+# Switch to workspace
+bindsym $alt+1 workspace 1
+bindsym $alt+2 workspace 2
+bindsym $alt+3 workspace 3
+bindsym $alt+4 workspace 4
+bindsym $alt+5 workspace 5
+bindsym $alt+6 workspace 6
+bindsym $alt+7 workspace 7
+bindsym $alt+8 workspace 8
+bindsym $alt+9 workspace 9
+bindsym $alt+0 workspace 10
+# Move focused container to workspace
+bindsym $alt+Shift+1 move container to workspace 1
+bindsym $alt+Shift+2 move container to workspace 2
+bindsym $alt+Shift+3 move container to workspace 3
+bindsym $alt+Shift+4 move container to workspace 4
+bindsym $alt+Shift+5 move container to workspace 5
+bindsym $alt+Shift+6 move container to workspace 6
+bindsym $alt+Shift+7 move container to workspace 7
+bindsym $alt+Shift+8 move container to workspace 8
+bindsym $alt+Shift+9 move container to workspace 9
+bindsym $alt+Shift+0 move container to workspace 10
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+# You can "split" the current object of your focus with
+# $alt+b or $alt+v, for horizontal and vertical splits
+# respectively.
+ bindsym $alt+b splith
+ bindsym $alt+v splitv
+
+# Switch the current container between different layout styles
+#bindsym $alt+s layout stacking
+#bindsym $alt+w layout tabbed
+bindsym $alt+e layout toggle split
+
+bindsym XF86Display output HDMI-A-2 toggle
+
+# Make the current focus fullscreen
+bindsym $alt+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $alt+tab floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $alt+Shift+tab focus mode_toggle
+
+bindsym $alt+z sticky toggle
+
+# Move focus to the parent container
+#bindsym $alt+a focus parent
+#
+# Scratchpad:
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $alt+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $alt+minus scratchpad show
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize grow width 20px
+    bindsym $down resize grow height 20px
+    bindsym $up resize shrink height 20px
+    bindsym $right resize shrink width 20px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $alt+r mode "resize"
+
+bindsym $alt+p exec grim -g "$(slurp -d)" - | wl-copy -t "image/png"
+
+#set $mode_system  |  l  🔒  |  s  🌙  |  r  🗘  |  S   ⏻  |  R  UEFI  
+mode "$mode_system" {
+    bindsym l exec $lock, mode "default"
+    bindsym e exit
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+#bindsym $alt+Shift+e mode "$mode_system"
+
+bindsym XF86Explorer exec $HOME/.scripts/switch
+bindsym $alt+Escape exec $HOME/.scripts/switch
+
+# Rotate your screen
+bindsym $mod+Shift+Up exec sh -c "swaymsg output $(swaymsg -p -t get_outputs | grep focused | awk \'{print $2}\') transform 180"
+bindsym $mod+Shift+Down exec sh -c "swaymsg output $(swaymsg -p -t get_outputs | grep focused | awk \'{print $2}\') transform 0"
+bindsym $mod+Shift+Left exec sh -c "swaymsg output $(swaymsg -p -t get_outputs | grep focused | awk \'{print $2}\') transform 90"
+bindsym $mod+Shift+Right exec sh -c "swaymsg output $(swaymsg -p -t get_outputs | grep focused | awk \'{print $2}\') transform 270"

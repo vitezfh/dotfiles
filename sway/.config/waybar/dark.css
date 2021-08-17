@@ -1,0 +1,87 @@
+* {
+	font-size: 20px;
+	font-family: monospace;
+}
+
+window#waybar {
+	background: rgba(0, 0, 0, 0.65);
+	color: #fdf6f3;
+}
+
+#mode {
+	color: #aa8800
+}
+
+#workspaces,
+#idle_inhibitor,
+#clock,
+#cpu,
+#pulseaudio,
+#memory,
+#battery,
+#disk,
+#temperature,
+#custom-ddc,
+#tray {
+	background: #101010;
+}
+
+#workspaces button {
+	padding: 0 1px;
+	color: #999999;
+}
+
+#workspaces button.focused {
+	color: #ffffff;
+	background: #2f2f2f;
+}
+
+#workspaces button:hover {
+	padding: 0 1px;
+	background: #ffffff;
+	color: #000000;
+}
+
+#idle_inhibitor {
+	color: #ac71b4;
+}
+
+#cpu {
+	color: #6c71c4;
+}
+#pulseaudio {
+	color: #268bd2;
+}
+#memory {
+	color: #2aa198;
+}
+#battery {
+	color: #859900;
+}
+#disk {
+	color: #b58900;
+}
+#temperature {
+	color: #fa672a;	
+}
+#clock {
+	margin: 0 0px;
+	padding: 0 18px;
+}
+#idle_inhibitor,
+#cpu,
+#pulseaudio,
+#memory,
+#battery,
+#disk,
+#temperature {
+	margin: 0px 14px;
+	padding: 0 13px;
+	box-shadow: 0px 10px 8px 0px;
+}
+.side2 * {
+	font-size: 15px;
+}
+.side1 * {
+	font-size: 18px;
+}

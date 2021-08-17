@@ -1,0 +1,20 @@
+{
+    "label" : "lock",
+    "action" : "swaylock --image /opt/oc-bg.png",
+    "keybind" : "h"
+}
+{
+    "label" : "hibernate",
+    "action" : "swaylock --image /opt/oc-bg.png & sleep 1 && sudo zzz",
+    "keybind" : "j"
+}
+{
+    "label" : "reboot",
+    "action" : "sudo reboot",
+    "keybind" : "k"
+}
+{
+    "label" : "shutdown",
+    "action" : "sudo poweroff",
+    "keybind" : "l"
+}

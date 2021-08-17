@@ -1,0 +1,87 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
+# Some cmdline "configs"
+alias config='git --git-dir=$HOME/.config/ --work-tree=$HOME'
+
+alias aria2c="aria2c -u 1K --max-download-limit=8M"
+
+alias icat="kitty +kitten icat"
+
+# WOL
+alias wake-tower="wol --ipaddr=tower '4c:cc:6a:ff:18:34'"
+
+###########
+#### VOID
+alias \
+	xi="sudo xbps-install -S" \
+	xr="sudo xbps-remove -R" \
+	xq="xbps-query -R" \
+	xs="xbps-query -Rs"
+alias sv="sudo sv"
+###########
+
+alias gcm="git commot -m"
+
+# Wayland / SwayWM specific settings
+alias wf-cutout='$(wf-recorder -g "$(slurp)")'
+
+# 3rd party tools (non-portable/uncommon)
+#alias ssh="kitty +kitten ssh" 
+alias wget="wget --continue --limit-rate=9M" 
+alias pomodoro='sleep 25m && paplay wow.wav & notify-send "Time is up!"'
+alias ytd="youtube-dl --add-metadata -i --default-search 'ytsearch' " 
+alias ytda="youtube-dl --default-search 'ytsearch' -i -x -f bestaudio/best" 
+alias ytv="youtube-viewer" 
+alias ytva="youtube-viewer -n" 
+alias ffmpeg="ffmpeg -hide_banner" 
+alias lolcat="lolcat -l" 
+alias maxlight='lamp brightness 100 && lamp temperature 3900'
+alias brightlight='lamp brightness 30 && lamp temperature 2500'
+alias medlight='lamp brightness 8 && lamp temperature 2500'
+alias dimlight='lamp brightness 0 && lamp temperature 1700'
+#alias readings='while true; do sensors | grep -e temp1 -e "Core 0" -e "Core 1" -e fan1 -B 1 && sleep 2.5 && clear; done'
+#alias show-me-packages="sudo pacman -Qi | grep 'Name\|Description' | less"
+
+#Verbosity and settings that you pretty much just always are going to want.
+alias \
+	bat="cat /sys/class/power_supply/BAT?/capacity" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -v" \
+	mkd="mkdir -pv" 
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	g="git" \
+	trem="transmission-remote" \
+	sd="sudo shutdown" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	bright="brightnessctl set" \
+	svenv="source venv/bin/activate" \
+	cx='chmod +x' \
+	..='cd ..' \
+	myp='ps -fjH -u $USER'
+
+# This alias is important. It enables the `pauseallmpv` command.
+alias mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
+
+alias icat="kitty +kitten icat"
+
+# Some other stuff
+alias themes='find $(find ~/.themes /usr/share/themes/ -wholename "*/gtk-3.0" | sed -e "s/^\(.*\)\/gtk-3.0$/\1/") -wholename "*/gtk-2.0" | sed -e "s/.*\/\(.*\)\/gtk-2.0/\1"/'
+#alias \
+#	magit="nvim -c MagitOnly" \
+#	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+#	weath="less -S ~/.local/share/weatherreport" \

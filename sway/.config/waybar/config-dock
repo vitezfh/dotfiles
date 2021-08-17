@@ -1,0 +1,41 @@
+[{
+        layer: top,    
+        name: side2,    
+        output: HDMI-A-1,    
+        position: right,    
+        modules-left: [  
+                sway/workspaces  
+                
+        ],
+        sway/workspaces: {  
+                disable-scroll: true,  
+                format: {name}    
+        }
+},
+{                   
+        "layer": "top",
+        name: side1,   
+        output: DP-2,  
+        position: left,
+        
+        modules-left: [
+                sway/workspaces
+          
+        ],
+                          
+        modules-right: [  
+                custom/ddc
+          
+        ],
+        
+        sway/workspaces: {
+                disable-scroll: true,
+                format: {name}
+        },             
+                                                                                         custom/ddc: {                                 
+                format: 🟓,
+                on-click: ./.config/waybar/ddc.sh,
+                tooltip: true
+        }
+  
+}]

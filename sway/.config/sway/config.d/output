@@ -1,0 +1,18 @@
+bindswitch --reload lid:on output $laptop disable
+bindswitch --reload lid:off output $laptop enable
+
+# INCONSISTENT EFFECT (SWAYMSG SOCKET NOT ONLINE LIKELY...)
+#exec_always bash $confdir/scripts/restore_outputs
+#exec_always bash $confdir/scripts/restore_wallpapers
+output '*' bg /opt/oc-bg.png fill
+
+ output DP-2 position 0 0 adaptive_sync on
+ # mode 3440x1440@99.943001Hz
+ # output $fhd mode 1920x1080@74.924004Hz position 0 0
+ output $fhd mode 1920x1080@74.924004Hz position 3440 261
+ output $laptop resolution 1920x1080 position 380 1440
+ # output $fhd resolution 1920x1080 position 3440 261
+# 
+# output DP-1 resolution 1920x1080 position 0 0
+# output DP-2 resolution 1920x1080 position 1920 0
+# output $laptop resolution 1920x1080 position 3840 800

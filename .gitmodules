@@ -1,0 +1,6 @@
+[submodule "media/.config/mpv/scripts/mpv2anki"]
+	path = media/.config/mpv/scripts/mpv2anki
+	url = https://github.com/vitezfh/mpv2anki
+[submodule "scripts/.scripts"]
+	path = scripts/.scripts
+	url = git@github.com:vitezfh/.scripts.git

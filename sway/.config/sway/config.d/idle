@@ -1,0 +1,16 @@
+#################################################################################
+#                                                                               #
+# This will lock your screen after 300 seconds of inactivity, then turn off     #
+# your displays aftr another 300 seconds, and turn your screens back on when    #
+# resumed. It will also lock your screen before your computer goes to sleep.    #
+#                                                                               #
+#################################################################################
+########
+### Idle configuration
+##
+exec swayidle -w \
+        #timeout 300 $lock \
+        timeout 400 'swaymsg "output * dpms off"' \
+        resume 'swaymsg "output * dpms on"' \
+        before-sleep $lock
+

@@ -1,0 +1,27 @@
+random_alphanum_string() { 
+	head /dev/urandom | tr -dc A-Za-z0-9 | head -c "$1" ; echo 
+}
+void_news() {
+	curl -sS https://voidlinux.org/atom.xml | sfeed | sfeed_html > /tmp/void.html && chromium /tmp/void.html
+}
+update_yt_dlp() {
+	sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+	sudo chmod a+rx /usr/local/bin/yt-dlp
+}
+colorize_icon () { 
+	convert "$2" -fill "$1" -colorize 100 "$1-$2"
+}
+
+shellfix () {
+	shellcheck -f diff "$@" | patch "$@"
+}
+
+#gcm () {
+#	git commit -m "$@"
+#}
+
+oc_tc_make_all() {
+	cd /home/vitezfh/git/oc-thinclient
+	source source.me
+	make-all
+}

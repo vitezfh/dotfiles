@@ -1,0 +1,23 @@
+#!/bin/sh
+laptop=eDP-1
+fhd=HDMI-A-1
+
+sleep 7
+
+work() {
+	swaymsg output DP-1 resolution 1920x1080 position 0 0
+	swaymsg output DP-2 resolution 1920x1080 position 1920 0
+	swaymsg output $laptop resolution 1920x1080 position 3840 800
+}
+
+home() {
+	swaymsg output DP-2 \
+		position 0 0 \
+	        adaptive_sync on
+	        #mode 3440x1440@99.943001Hz
+	#output $fhd mode 1920x1080@74.924004Hz position 0 0
+	swaymsg output $laptop resolution 1920x1080 position 1440 1440
+	swaymsg output $fhd resolution 1920x1080 position 3440 261
+}
+
+"$1"

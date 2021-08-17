@@ -1,0 +1,60 @@
+### Input configuration
+# input * xkb_variant "colemak,,typewriter"
+input type:mouse {
+ 	accel_profile flat
+}
+#input "MANUFACTURER1 Keyboard" xkb_model "pc101"
+
+input type:touchpad {
+ 	dwt disabled
+ 	events disabled_on_external_mouse true
+ 	tap enabled
+ 	natural_scroll disabled
+ 	middle_emulation disabled
+}
+
+input type:keyboard {
+ 	xkb_layout "us,de,latam"
+ 	repeat_delay 290
+ 	repeat_rate 32
+ 	xkb_options "caps:escape,grp:win_space_toggle"
+}
+
+input '2:8:AlpsPS/2_ALPS_DualPoint_Stick' events disabled
+
+##
+#
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+	pointer_accel -0.2
+	accel_profile flat
+}
+
+input "0:1336:USB_OPTICAL_MOUSE" {        
+	pointer_accel -0.3
+	accel_profile flat
+}
+
+input "2:10:TPPS\/2_IBM_TrackPoint" {
+}
+
+input "1133:49278:Logitech_Gaming_Mouse_G402" {
+	pointer_accel 0.125
+	accel_profile flat
+}
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+#
+# List out layouts here
+set $kb_layout1 "de"
+set $kb_layout2 "us"
+set $kb_layout3 "hr"
+set $kb_layout4 "latam"
+
+input "9390:8208:RAPOO_Rapoo_2.4G_Wireless_Device" {
+	xkb_layout "$kb_layout2,$kb_layout1"
+	xkb_options "grp:win_space_toggle"                                                                          
+	xkb_numlock "enable"                                                                                        
+	pointer_accel -0.3
+	accel_profile flat
+}

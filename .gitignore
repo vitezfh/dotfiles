@@ -1,0 +1,17 @@
+*.log
+**/cache
+*.status
+*.sql
+*.pid
+pipewire/
+cookie
+*.tdb
+pulse/
+chromium/
+discord/
+Electron/
+*.bak
+Slack/
+dconf/
+ibus/
+api.json

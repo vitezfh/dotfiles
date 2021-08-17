@@ -1,0 +1,7 @@
+#!/bin/sh
+if ibus engine | grep "No engine is set." >/dev/null; then
+	ibus engine hangul
+else
+	ibus-daemon -rd
+	ibus engine hangul
+fi

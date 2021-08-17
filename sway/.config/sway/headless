@@ -1,0 +1,81 @@
+#       SSS
+#      S   S
+#      S
+#      S      S     S   SSSS   S    S
+#       SSS   S     S       S  S    S
+#          S  S  S  S   SSSSS  S    S
+#          S  S  S  S  S    S  S   SS
+#      S   S  S  S  S  S   SS   SSS S
+#       SSS    SS SS    SSS S       S
+#                              S    S
+#                               SSSS
+#
+include $HOME/.config/sway/theme/ocean
+### VARIABLES
+#
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+#xwayland disable
+set $lock 'swaylock --image $(find ~/.config/sway/wallpapers -type f | shuf -n 1)'
+
+output DP-2 disable
+output eDP-1 disable
+
+exec swaymsg create_output HEADLESS-1
+output HEADLESS-1 resolution 1600x2560
+
+exec wayvnc 0.0.0.0
+
+set $laptop eDP-1
+#set $fhd HDMI-A-1
+
+set $confdir $HOME/.config/sway
+
+# Logo key and alt key
+set $mod Mod4
+set $alt Mod1
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Variable font size for terminal (see script to configure: TODO: make configuration availible through arguments)
+set $font_size exec sh .config/sway/scripts/font-size-chooser eDP-1 DP-2
+
+# terminal emulator
+set $term kitty -o font_size=$($font_size)
+
+# Browser
+set $browser chromium
+
+# FZF CONFIG
+set $fzf fzf -i --cycle
+
+# Application launcher
+set $menu $term --class "simplemenu"
+
+# Notification Daemon
+# exec_always BECAUSE you get multiple instances of running instances, or
+# if just exec, you get no mako at all...
+exec pkill mako
+#exec pkill dbus-daemon
+exec_always dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
+
+# Borders and gaps
+default_border pixel 2
+default_floating_border normal
+hide_edge_borders smart
+
+smart_gaps on
+gaps inner 8
+
+# Include your config files here
+
+include /etc/sway/config.d/*
+
+include $HOME/.config/sway/config.d/bindings
+include $HOME/.config/sway/config.d/workspaces
+
+exec xrdb -load ~/.Xresources
