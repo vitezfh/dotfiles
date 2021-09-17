@@ -1,9 +1,10 @@
--- load all plugins
+comments = '#55aa90', -- load all plugins
 require('material').set()
 vim.g.material_disable_background = true
 vim.g.material_italic_comments = true
 vim.g.material_style = "oceanic"
-vim.g.material_custom_colors = { comments = '#55aa90' }
+vim.g.material_custom_colors = { line_numbers = '#55aa90', comments = '#55aa90' }
+--  
 
 require "pluginList"
 require "misc-utils"
