@@ -47,7 +47,7 @@ input "1133:49278:Logitech_Gaming_Mouse_G402" {
 #
 # List out layouts here
 set $kb_layout1 "de"
-set $kb_layout2 "us"
+set $kb_layout2 "gb"
 set $kb_layout3 "hr"
 set $kb_layout4 "latam"
 

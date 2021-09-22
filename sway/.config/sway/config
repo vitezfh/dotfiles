@@ -11,7 +11,11 @@
 #                               SSSS
 #
 set $confdir $HOME/.config/sway
-include $confdir/theme/ocean
+set $waybardir $XDG_CONFIG_HOME/waybar/
+set $theme dark
+include $confdir/theme/$theme
+exec_always unlink $waybardir/style.css
+exec_always ln -s $waybardir/$theme.css $waybardir/style.css
 #xwayland disable
 ### VARIABLES
 #
@@ -40,7 +44,8 @@ set $font_size exec sh .config/sway/scripts/font-size-chooser eDP-1
 #set $font_size exec sh .config/sway/scripts/font-size-chooser eDP-1 DP-2
 
 # terminal emulator
-set $term kitty -o font_size=$($font_size)
+set $term kitty -o font_size=$($font_size) -c .config/kitty/$theme.conf -c .config/kitty/kitty.conf
+
 
 # Browser
 set $browser chromium
@@ -65,12 +70,12 @@ exec_always dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
 
 # Borders and gaps
-default_border pixel 2
+default_border pixel 1
 default_floating_border normal
 hide_edge_borders smart
 
-smart_gaps on
-gaps inner 8
+#smart_gaps on
+#gaps inner 2
 
 # Include your config files here
 

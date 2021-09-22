@@ -16,3 +16,4 @@ dconf/
 ibus/
 api.json
 .zcompdump
+waybar/style.css

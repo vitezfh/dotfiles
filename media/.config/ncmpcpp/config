@@ -22,7 +22,7 @@ lyrics_directory = ~/.local/share/lyrics
 #
 ##### connection settings #####
 #
-mpd_host = x2sixty
+mpd_host = ~/.config/mpd/socket
 #
 #mpd_port = 6600
 #

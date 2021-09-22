@@ -52,12 +52,8 @@ bindsym --release $mod+tab exec $menu zsh
 # Also quick "launcher" key combos for apps (and their classic counterparts):
 
 # Browser
-bindsym --release $mod+i exec $browser --profile-directory='Profile 1'
-#bindsym --release $mod+p exec $browser --private-window
-bindsym --release $mod+p exec $browser --profile-directory='Profile 2'
-
-# Ytfzf
-bindsym --release $mod+y exec yee
+bindsym --release $mod+i exec $browser
+bindsym --release $mod+p exec $browser --private-window
 
 # Music player controller:
 bindsym $mod+0 exec "$term --class mplayer -T mplayer -e ncmpcp
@@ -96,9 +92,6 @@ bindsym XF86LaunchA exec $term -e pulsemixer
 # Webcam
 bindsym $mod+Shift+w exec "mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --x11-name='webcam' --title='webcam' --no-cache --profile=low-latency --untimed /dev/video2 --vf='hflip'"
 # Visualizer
-# bindsym $mod+c exec pkill glava; exec sleep 1 && glava -e red.glsl
-# bindsym $mod+v exec pkill glava; exec sleep 1 && glava -e rc.glsl
-# bindsym $mod+b exec pkill glava; exec sleep 1 && glava -e b.glsl
 
 #
 # TODO: Execute on clipboard:
@@ -233,21 +226,6 @@ mode "resize" {
 bindsym $alt+r mode "resize"
 
 bindsym $alt+p exec grim -g "$(slurp -d)" - | wl-copy -t "image/png"
-
-#set $mode_system  |  l  🔒  |  s  🌙  |  r  🗘  |  S   ⏻  |  R  UEFI  
-mode "$mode_system" {
-    bindsym l exec $lock, mode "default"
-    bindsym e exit
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-    bindsym Shift+r exec --no-startup-id systemctl reboot --firmware-setup, mode "default"
-
-    # return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-#bindsym $alt+Shift+e mode "$mode_system"
 
 bindsym XF86Explorer exec $HOME/.scripts/switch
 bindsym $alt+Escape exec $HOME/.scripts/switch
