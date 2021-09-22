@@ -13,6 +13,8 @@ alias icat="kitty +kitten icat"
 # WOL
 alias wake-tower="wol --ipaddr=tower '4c:cc:6a:ff:18:34'"
 
+alias adog='git log --all --decorate --oneline --graph'
+
 ###########
 #### VOID
 alias \
