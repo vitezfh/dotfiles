@@ -1,10 +1,16 @@
+set $laptop eDP-1
+set $monitor HDMI-A-2
+
 bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
 
 # INCONSISTENT EFFECT (SWAYMSG SOCKET NOT ONLINE LIKELY...)
-#exec_always bash $confdir/scripts/restore_outputs
-#exec_always bash $confdir/scripts/restore_wallpapers
-output '*' bg /opt/oc-bg.png fill
+exec_always bash $confdir/scripts/restore_outputs
+exec_always bash $confdir/scripts/restore_wallpapers
 
-exec_always sh $confdir/scripts/output-manager
+#exec_always sh $confdir/scripts/output-manager
 
+# ensure external output is on the left
+#output $monitor resolution 1920x1080 position 1920,0
+# ensure internal output is on the left
+output $laptop resolution 1920x1080 position 1920,0
