@@ -24,7 +24,7 @@ compinit
 
 zstyle ":completion:*:commands" rehash 1
 
-kitty + complete setup zsh | source /dev/stdin
+#kitty + complete setup zsh | source /dev/stdin
 
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)

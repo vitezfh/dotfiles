@@ -30,7 +30,7 @@ else
   swaymsg output DP-2 position 0 0 adaptive_sync on mode 3440x1440@99.943001Hz
   # output $fhd mode 1920x1080@74.924004Hz position 0 0
 # output $fhd resolution 1920x1080 position 3440 261
-  swaymsg output HDMI-A-1 mode 1920x1080@74.924004Hz position 3440 261
-  swaymsg output eDP-1 resolution 1920x1080 position 380 1440
+  swaymsg output HDMI-A-1 mode 1920x1080@74.924004Hz position 3440 120
+  swaymsg output eDP-1 resolution 1920x1080 position 3440 1200
   # echo home > /tmp/sway_output_conf
 fi

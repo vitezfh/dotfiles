@@ -15,7 +15,7 @@ export JAVA_HOME="/usr/lib/jvm/openjdk11/"
 #export MOZ_ENABLE_WAYLAND=1
 export VIRSH_DEFAULT_CONNECT_URI="qemu+ssh://vitezfh@hyrican/system"
 
-export XDG_CURRENT_DESKTOP=Unity ##was enabled
+#export XDG_CURRENT_DESKTOP=Unity ##was enabled
 
 #export XDG_CURRENT_DESKTOP=sway
 #export GDK_BACKEND=wayland

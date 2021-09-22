@@ -27,7 +27,7 @@ bindsym XF86ScreenSaver exec $lock
 bindsym --release $alt+q kill
 
 #Wallpaper changers
-bindsym --release $mod+d exec $menu bash -c $HOME/.scripts/change_background
+bindsym --release $mod+d exec $menu bash -e $HOME/.scripts/change_background
 bindsym --release $mod+Shift+d exec $HOME/.scripts/change_background_imv
 
 # Drag floating windows by holding down $mod and left mouse button.
@@ -46,9 +46,9 @@ floating_modifier $alt normal
 set $launcher "whence -pm '*' | xargs -i basename {} | $fzf | xargs swaymsg exec --"
 # for bash
 # set $launcher "compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec"
-bindsym --release $mod+x exec $menu zsh -c $launcher
+bindsym --release $mod+x exec $menu -e zsh -c $launcher
 
-bindsym --release $mod+tab exec $menu zsh
+bindsym --release $mod+tab exec $menu -e zsh
 # Also quick "launcher" key combos for apps (and their classic counterparts):
 
 # Browser
