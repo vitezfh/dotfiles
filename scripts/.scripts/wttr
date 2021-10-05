@@ -1,0 +1,5 @@
+#!/bin/bash
+# Usage: wttr 2
+echo
+curl -s wttr.in/$1?$2F &
+wait
