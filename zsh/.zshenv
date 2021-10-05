@@ -1,5 +1,8 @@
 export REDDIO_LIB="$HOME"/.local/share/reddio
 
+export TERM=xterm-256color
+
+
 export EDITOR=nvim
 
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -15,7 +18,7 @@ export JAVA_HOME="/usr/lib/jvm/openjdk11/"
 #export MOZ_ENABLE_WAYLAND=1
 export VIRSH_DEFAULT_CONNECT_URI="qemu+ssh://vitezfh@hyrican/system"
 
-export XDG_CURRENT_DESKTOP=Unity ##was enabled
+#export XDG_CURRENT_DESKTOP=Unity ##was enabled
 
 #export XDG_CURRENT_DESKTOP=sway
 #export GDK_BACKEND=wayland
@@ -28,3 +31,4 @@ export QT_IM_MODULE=ibus
 export XBPS_DISTDIR=/home/vitezfh/git/void-packages
 export MPD_HOST=x2sixty
 export $(dbus-launch)
+export SVDIR=~/.sv/service

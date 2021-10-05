@@ -25,3 +25,7 @@ oc_tc_make_all() {
 	source source.me
 	make-all
 }
+
+launcher() {
+	$(whence -pm '*' | xargs -i basename {} | fzf -i --cycle)
+}

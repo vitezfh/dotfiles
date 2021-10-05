@@ -1,0 +1,3 @@
+#!/bin/sh
+
+flatpak --filesystem=home run com.slack.Slack

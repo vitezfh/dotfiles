@@ -24,7 +24,7 @@ compinit
 
 zstyle ":completion:*:commands" rehash 1
 
-kitty + complete setup zsh | source /dev/stdin
+#kitty + complete setup zsh | source /dev/stdin
 
 # Include hidden files in autocomplete:
 _comp_options+=(globdots)
@@ -41,8 +41,11 @@ export KEYTIMEOUT=1
 [ -f /usr/share/doc/fzf/completion.zsh ] && source /usr/share/doc/fzf/completion.zsh
 [ -f /usr/share/doc/fzf/key-bindings.zsh ] && source /usr/share/doc/fzf/key-bindings.zsh
 
+# source <(cod init $$ zsh)
+
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 #moon
-# neofetch --size '300' --gap 1 # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
-pfetch
+neofetch --size '300' --gap -22 # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
+#pfetch
+export TERM=xterm-256color

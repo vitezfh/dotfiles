@@ -46,6 +46,8 @@ set $font_size exec sh .config/sway/scripts/font-size-chooser eDP-1
 # terminal emulator
 set $term kitty -o font_size=$($font_size) -c .config/kitty/$theme.conf -c .config/kitty/kitty.conf
 
+#set $term kitty -o font_size=$($font_size)
+set $term alacritty -o font.size=$($font_size)
 
 # Browser
 set $browser chromium

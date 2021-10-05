@@ -29,18 +29,15 @@ XF86AudioMute
 
 # browser
 super + i
-	firefox
+	chromium --profile-directory='Profile 1'
 
 super + shift + i
-	firefox --private-window
-
-XF86Search
-	firefox --new-tab "googl.com/#q=$(xclip -out -selection primary)"
+	chromium --profile-directory='Profile 2'
 
 ###################
 # terminal emulator
 super + Return
-	kitty
+	alacritty
 
 
 XF86Tools
@@ -63,7 +60,7 @@ XF86Tools
 
 # Brightness dmenu
 super + space
-	kitty "$(dmenu -b -sb '#bb5566')"  
+	alacritty "$(dmenu -b -sb '#bb5566')"  
 # -yoffset 430 -xoffset 660 -show drun -columns 2 -show-icons -padding 18 -modi drun
 
 
