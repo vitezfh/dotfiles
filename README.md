@@ -12,9 +12,14 @@ Some submodules are included (my daily-use https://github.com/vitezfh/.scripts a
 
 - [ ] sepparate into branches for work, home, personal laptop
 - [ ] integrate into bootstrap script w/ ansible role/playbook
-- [ ] theming system sync for sway, kitty, waybar, etc.
+- [X] theming system sync for sway, kitty, waybar, etc.
 - [ ] ...
 
+## Important Notes
+
+ - Look at the .gitignore file for clues
+ - Some things are 
+
 ## Screencaps
-The left is blown up because it's FHD on a x260 Thinkpad; the right is a secondary display.
+OUTDATED: The left is blown up because it's FHD on a x260 Thinkpad; the right is a secondary display.
 ![Screencap1](.screenshots/screenshot1.png)
