@@ -1,9 +1,9 @@
 #!/bin/sh
 
 sxhkd &
-bspc monitor DP2 -d I II III
+bspc monitor DP1 -d I II III
 #bspc monitor HDMI1 -d I II III
-bspc monitor eDP1 -d IV V VI VII VIII IX X
+bspc monitor DP2 -d IV V VI VII VIII IX X
 #bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
 
 bspc config border_width	1
@@ -21,3 +21,6 @@ bspc rule -a Zathura state=tiled
 bspc rule -a stpopup state=floating rectangle=1918x380+0+698
 bspc rule -a player state=floating rectangle=500x380+1418+698
 bspc rule -a settings state=floating rectangle=500x380+1418+698
+
+xrandr --output DP1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP2 --primary --mode 1920x1080 --pos 1920x0
+#xrandr --output DP2 --mode 3440x1440 --pos 0x0 --rotate normal --output eDP1 --primary --mode 1920x1080 --pos 3440x1200
