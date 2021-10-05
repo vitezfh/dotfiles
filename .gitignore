@@ -16,3 +16,5 @@ dconf/
 ibus/
 api.json
 .zcompdump
+
+scripts/.scripts/

@@ -1,3 +1,0 @@
-#!/bin/bash
-# Usage: dict 'purple elephant'
-curl 'dict://dict.org/d:'$1'' -s | sed -e '/^[0-9]/d' & wait
