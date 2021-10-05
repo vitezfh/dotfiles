@@ -1,5 +1,8 @@
 export REDDIO_LIB="$HOME"/.local/share/reddio
 
+export TERM=xterm-256color
+
+
 export EDITOR=nvim
 
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -28,3 +31,4 @@ export QT_IM_MODULE=ibus
 export XBPS_DISTDIR=/home/vitezfh/git/void-packages
 export MPD_HOST=x2sixty
 export $(dbus-launch)
+export SVDIR=~/.sv/service

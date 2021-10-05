@@ -38,7 +38,7 @@ input "2:10:TPPS\/2_IBM_TrackPoint" {
 }
 
 input "1133:49278:Logitech_Gaming_Mouse_G402" {
-	pointer_accel 0.125
+	pointer_accel 1
 	accel_profile flat
 }
 #

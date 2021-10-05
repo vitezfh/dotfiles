@@ -4,12 +4,15 @@ out_conf=home
 
 sleep 5
 
+# reach_gateway() {
+#   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
+# }
 reach_gateway() {
-  ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
+  ( ip a | grep 192.168.178.66 &>/dev/null ) || ( ip a | grep 192.168.178.55 )
 }
 
 # see if at work
-if reach_gateway 192.168.99.1
+if ! reach_gateway 192.168.99.1
 then
   out_conf=work
 # elif
@@ -28,9 +31,11 @@ then
 else
   # Home
   swaymsg output DP-2 position 0 0 adaptive_sync on mode 3440x1440@99.943001Hz
+  #swaymsg output DP-2 position 0 0 adaptive_sync on mode 2560x1080@99.943001Hz
   # output $fhd mode 1920x1080@74.924004Hz position 0 0
 # output $fhd resolution 1920x1080 position 3440 261
   swaymsg output HDMI-A-1 mode 1920x1080@74.924004Hz position 3440 120
   swaymsg output eDP-1 resolution 1920x1080 position 3440 1200
+  #swaymsg output eDP-1 resolution 1920x1080 position 2560 900
   # echo home > /tmp/sway_output_conf
 fi

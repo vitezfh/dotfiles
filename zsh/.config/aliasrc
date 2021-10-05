@@ -22,7 +22,7 @@ alias \
 	xr="sudo xbps-remove -R" \
 	xq="xbps-query -R" \
 	xs="xbps-query -Rs"
-alias sv="sudo sv"
+alias ssv="sudo sv"
 ###########
 
 alias gcm="git commot -m"
