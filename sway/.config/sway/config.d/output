@@ -1,5 +1,3 @@
-set $laptop eDP-1
-set $monitor HDMI-A-2
 
 bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
@@ -11,6 +9,7 @@ exec_always bash $confdir/scripts/restore_wallpapers
 #exec_always sh $confdir/scripts/output-manager
 
 # ensure external output is on the left
-#output $monitor resolution 1920x1080 position 1920,0
+#output HDMI-A-2 resolution 1920x1080 position 1920,0
 # ensure internal output is on the left
-output $laptop resolution 1920x1080 position 1920,0
+output DP-1 position 0,0 adaptive_sync on mode 3440x1440@99.982Hz
+output eDP-1 resolution 1920x1080 position 3440,500

@@ -17,3 +17,4 @@ ibus/
 api.json
 .zcompdump
 **/waybar/style.css
+cli-history.txt
