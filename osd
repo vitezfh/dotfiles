@@ -1,0 +1,2 @@
+#!/bin/sh
+OpenSubtitlesDownload.py --select manual -g cli -u $OPEN_SUBTITLES_U -p $OPEN_SUBTITLES_P $@

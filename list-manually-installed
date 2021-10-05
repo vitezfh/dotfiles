@@ -1,0 +1,4 @@
+#! /bin/bash
+while read -r package ; do
+	echo "${package%-*}"
+done < <(xbps-query -lm)

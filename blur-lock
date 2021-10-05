@@ -1,0 +1,15 @@
+#!/bin/bash
+# Screenshots and blurs and uses your screens as background for screen lock
+outputs=$(swaymsg -t get_outputs -r | jq -r '.[] | select(.active==true) | .name')
+img_dir=/tmp/sway-lock-imgs ; mkdir -p $img_dir
+
+for output in $outputs ; do
+  grim -o $output $img_dir/$output.png
+  convert $img_dir/$output.png -blur 0x20 $img_dir/$output.png
+  composite -gravity Center $HOME/lock.png $img_dir/$output.png $img_dir/$output.png
+done
+
+swaylock -c 111111 \
+  $(for output in $outputs; do echo '-i' $output:$img_dir/$output.png ; done)
+
+

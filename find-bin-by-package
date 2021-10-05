@@ -1,0 +1,4 @@
+#!/bin/bash
+# Usage: 
+#pacman -Qlq $1 | grep /usr/bin/
+xbps-query -f "$1" | grep /usr/bin

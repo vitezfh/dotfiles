@@ -1,0 +1,6 @@
+#!/bin/sh
+git rev-list --all | (
+    while read revision; do
+        git grep -F "$@" $revision
+    done
+)

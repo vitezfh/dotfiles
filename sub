@@ -1,0 +1,2 @@
+#!/bin/sh
+subliminal --opensubtitles $OPEN_SUBTITLES_U $OPEN_SUBTITLES_P download $@

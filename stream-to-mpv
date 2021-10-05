@@ -1,0 +1,3 @@
+#!/bin/sh
+# This is for streaming from wget to mpv. Not sure why I used it, since mpv has that functionality built in (I think).
+wget "$*" -o /dev/null -O - | mpv -
