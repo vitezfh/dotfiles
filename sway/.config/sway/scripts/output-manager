@@ -4,6 +4,8 @@ out_conf=home
 
 sleep 5
 
+[ ! "$HOME" = "svwork" ] && exit
+
 # reach_gateway() {
 #   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
 # }
