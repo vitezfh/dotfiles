@@ -18,13 +18,16 @@ echo Running stow on $TO_DEPLOY ...
 stow $TO_DEPLOY
 
 echo Unlinking and linking sway themes ...
+mkdir -p $XDG_CONFIG_HOME/sway/theme
 unlink $XDG_CONFIG_HOME/sway/theme/theme.link || true
 ln -s $XDG_CONFIG_HOME/sway/theme/$SWAY_THEME $XDG_CONFIG_HOME/sway/theme/theme.link
 
 echo Unlinking and linking kitty themes ...
+mkdir -p $XDG_CONFIG_HOME/kitty
 unlink $XDG_CONFIG_HOME/kitty/theme.link || true
 ln -s $XDG_CONFIG_HOME/kitty/$SWAY_THEME".conf" $XDG_CONFIG_HOME/kitty/theme.link
 
 echo Unlinking and linking waybar themes ...
+mkdir -p $XDG_CONFIG_HOME/waybar
 unlink $XDG_CONFIG_HOME/waybar/style.css || true
 ln -s $XDG_CONFIG_HOME/waybar/$SWAY_THEME".css" $XDG_CONFIG_HOME/waybar/style.css

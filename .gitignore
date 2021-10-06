@@ -30,4 +30,5 @@ cli-history.txt
 
 scripts/
 dotfile.conf
+*.link
 #####################################
