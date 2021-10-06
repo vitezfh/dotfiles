@@ -29,4 +29,5 @@ cli-history.txt
 **/waybar/style.css
 
 scripts/
+dotfile.conf
 #####################################

@@ -49,5 +49,3 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 neofetch --size '300' --gap -22 # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
 #pfetch
 export TERM=xterm-256color
-
-[ -f $HOME/dotfiles/dotfile-config ] && source $HOME/dotfiles/dotfile-config

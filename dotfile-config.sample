@@ -1,5 +1,0 @@
-#!/bin/sh
-
-TO_DEPLOY="bspwm media kitty nvim ssh sway zsh uni_desktop"
-SWAY_THEME=dark
-
