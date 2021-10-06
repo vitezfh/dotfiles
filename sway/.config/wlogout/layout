@@ -10,11 +10,11 @@
 }
 {
     "label" : "reboot",
-    "action" : "sudo reboot",
+    "action" : "$HOME/.config/sway/scripts/pre-shutdown.sh ; sudo reboot",
     "keybind" : "k"
 }
 {
     "label" : "shutdown",
-    "action" : "sudo poweroff",
+    "action" : "$HOME/.config/sway/scripts/pre-shutdown.sh ; sudo poweroff",
     "keybind" : "l"
 }

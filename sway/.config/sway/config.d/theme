@@ -1,4 +1,2 @@
 
-include $confdir/theme/$theme
-exec_always unlink $waybardir/style.css
-exec_always ln -s $waybardir/$theme.css $waybardir/style.css
+include $confdir/theme/theme.link

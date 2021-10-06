@@ -11,10 +11,9 @@
 #                              S    S
 #                               SSSS
 #
+include /etc/sway/config.d/*
 set $confdir $HOME/.config/sway
 set $waybardir $XDG_CONFIG_HOME/waybar/
-
-set $theme $SWAY_THEME
 
 #xwayland disable
 ### VARIABLES
@@ -44,7 +43,7 @@ set $font_size exec sh .config/sway/scripts/font-size-chooser eDP-1
 #set $font_size exec sh .config/sway/scripts/font-size-chooser eDP-1 DP-2
 
 # terminal emulator
-set $term kitty -o font_size=$($font_size) -c $XDG_CONFIG_HOME/kitty/$theme.conf -c $XDG_CONFIG_HOME/kitty/kitty.conf
+set $term kitty -o font_size=$($font_size) -c $XDG_CONFIG_HOME/kitty/theme.link -c $XDG_CONFIG_HOME/kitty/kitty.conf
 
 #set $term kitty -o font_size=$($font_size)
 #set $term alacritty -o font.size=$($font_size)
@@ -62,6 +61,7 @@ exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 exec pipewire
 exec pipewire-pulse
+exec pipewire-media-session
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or
@@ -81,7 +81,6 @@ hide_edge_borders smart
 
 # Include your config files here
 
-include /etc/sway/config.d/*
 
 include $confdir/config.d/*
 
