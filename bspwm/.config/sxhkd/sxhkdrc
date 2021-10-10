@@ -37,7 +37,7 @@ super + shift + i
 ###################
 # terminal emulator
 super + Return
-	alacritty
+	kitty
 
 
 XF86Tools
