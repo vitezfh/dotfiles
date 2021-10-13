@@ -197,7 +197,7 @@
 }, {
 "layer": "top",
 "name": "side1",
-"output": "DP-2",
+"output": "DP-3",
 "position": "right",
 "modules-left": [
 	"sway/workspaces"

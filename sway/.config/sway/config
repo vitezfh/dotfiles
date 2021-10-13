@@ -61,7 +61,6 @@ exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 exec pipewire
 exec pipewire-pulse
-exec pipewire-media-session
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or
@@ -72,7 +71,7 @@ exec_always dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
 
 # Borders and gaps
-default_border pixel 1
+default_border pixel 2
 default_floating_border normal
 hide_edge_borders smart
 

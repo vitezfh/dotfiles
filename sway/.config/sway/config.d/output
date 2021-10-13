@@ -3,7 +3,7 @@ bindswitch --reload lid:on output $laptop disable
 bindswitch --reload lid:off output $laptop enable
 
 # INCONSISTENT EFFECT (SWAYMSG SOCKET NOT ONLINE LIKELY...)
-exec_always bash $confdir/scripts/restore_outputs
+exec_always bash $confdir/scripts/output-manager
 exec_always bash $confdir/scripts/restore_wallpapers
 
 #exec_always sh $confdir/scripts/output-manager
@@ -11,5 +11,6 @@ exec_always bash $confdir/scripts/restore_wallpapers
 # ensure external output is on the left
 #output HDMI-A-2 resolution 1920x1080 position 1920,0
 # ensure internal output is on the left
-output DP-1 position 0,0 adaptive_sync on mode 3440x1440@99.982Hz
-output eDP-1 resolution 1920x1080 position 3440,500
+# output DP-1 position 0,0 adaptive_sync on mode 3440x1440@99.982Hz
+# output eDP-1 resolution 1920x1080 position 1920,760
+# output DP-3 resolution 1920x1080 position 0,0

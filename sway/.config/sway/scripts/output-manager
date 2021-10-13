@@ -10,7 +10,7 @@ sleep 5
 #   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
 # }
 reach_gateway() {
-  ( ip a | grep 192.168.178.66 &>/dev/null ) || ( ip a | grep 192.168.178.55 )
+  ip a | grep '178.55\|178.65\|178.97'
 }
 
 # see if at work
@@ -26,13 +26,13 @@ fi
 if [ "$out_conf" = "work" ]
 then
   # Work
-  swaymsg output DP-1 resolution 1920x1080 position 0 0
-  swaymsg output DP-2 resolution 1920x1080 position 1920 0
-  swaymsg output eDP-1 resolution 1920x1080 position 3840 800
+  # swaymsg output DP-1 resolution 1920x1080 position 1920 800
+  swaymsg output DP-3 resolution 1920x1080 position 0 0
+  swaymsg output eDP-1 resolution 1920x1080 position 1920 760
   # echo work > /tmp/sway_output_conf
 else
   # Home
-  swaymsg output DP-2 position 0 0 adaptive_sync on mode 3440x1440@99.943001Hz
+  swaymsg output DP-3 position 0 0 adaptive_sync on mode 3440x1440@99.943001Hz
   #swaymsg output DP-2 position 0 0 adaptive_sync on mode 2560x1080@99.943001Hz
   # output $fhd mode 1920x1080@74.924004Hz position 0 0
 # output $fhd resolution 1920x1080 position 3440 261

@@ -52,8 +52,8 @@ bindsym --release $mod+tab exec $menu -e zsh
 # Also quick "launcher" key combos for apps (and their classic counterparts):
 
 # Browser
-bindsym --release $mod+i exec $browser
-bindsym --release $mod+p exec $browser --private-window
+bindsym --release $mod+i exec $browser --profile-directory='Profile 1'
+bindsym --release $mod+p exec $super + i --profile-directory='Profile 2'
 
 # Music player controller:
 bindsym $mod+0 exec "$term --class mplayer -T mplayer -e ncmpcp
