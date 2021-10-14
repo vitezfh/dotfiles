@@ -53,7 +53,7 @@ bindsym --release $mod+tab exec $menu -e zsh
 
 # Browser
 bindsym --release $mod+i exec $browser --profile-directory='Profile 1'
-bindsym --release $mod+p exec $super + i --profile-directory='Profile 2'
+bindsym --release $mod+p exec $browser --profile-directory='Profile 2'
 
 # Music player controller:
 bindsym $mod+0 exec "$term --class mplayer -T mplayer -e ncmpcp
