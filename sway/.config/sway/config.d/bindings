@@ -12,6 +12,7 @@
 #                K    K                                        K    K
 #                 KKKK                                          KKKK
 #
+bindsym --release $mod+c exec $menu -e zsh -c $clipbored
 # Basics:
 # Start a terminal
 bindsym $mod+Return nop 

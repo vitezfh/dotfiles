@@ -22,6 +22,18 @@ set $lock 'wlogout -p layer-shell -b 4'
 #set $lock 'swaylock --image $(find ~/.config/sway/wallpapers -type f | shuf -n 1)'
 
 
+#                                                  
+#         ""#      "                               
+#   mmm     #    mmm    mmmm   mmmmm   mmm   m mm  
+#  #"  "    #      #    #" "#  # # #  "   #  #"  # 
+#  #        #      #    #   #  # # #  m"""#  #   # 
+#  "#mm"    "mm  mm#mm  ##m#"  # # #  "mm"#  #   # 
+#                       #                          
+#                       "   
+
+exec wl-paste -t text --watch clipman store
+set $clipbored "clipman pick -t STDOUT | $fzf | wl-copy"
+
 # https://raw.githubusercontent.com/swaywm/sway/master/contrib/inactive-windows-transparency.py
 # exec $confdir/scripts/inactive-windows-transparency.py
 
@@ -49,7 +61,7 @@ set $term kitty -o font_size=$($font_size) -c $XDG_CONFIG_HOME/kitty/theme.link 
 #set $term alacritty -o font.size=$($font_size)
 
 # Browser
-set $browser chromium
+set $browser chromium --enable-features=UseOzonePlatform --ozone-platform=wayland
 
 # FZF CONFIG
 set $fzf fzf -i --cycle

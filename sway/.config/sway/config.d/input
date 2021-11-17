@@ -7,7 +7,7 @@ input type:mouse {
 
 input type:touchpad {
  	dwt disabled
- 	events disabled_on_external_mouse true
+ 	# events disabled_on_external_mouse true
  	tap enabled
  	natural_scroll disabled
  	middle_emulation disabled
