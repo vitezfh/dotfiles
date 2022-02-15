@@ -37,7 +37,7 @@ else
   # output $fhd mode 1920x1080@74.924004Hz position 0 0
 # output $fhd resolution 1920x1080 position 3440 261
   swaymsg output HDMI-A-1 mode 1920x1080@74.924004Hz position 3440 120
-  swaymsg output eDP-1 resolution 1920x1080 position 3440 950
+  swaymsg output eDP-1 resolution 1920x1080 position 0 1440
   #swaymsg output eDP-1 resolution 1920x1080 position 2560 900
   # echo home > /tmp/sway_output_conf
 fi
