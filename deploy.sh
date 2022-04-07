@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -17,6 +17,7 @@ echo Sourcing that config ...
 echo Running stow on $TO_DEPLOY ...
 stow $TO_DEPLOY
 
+# TODO: add function "relink"
 echo Unlinking and linking sway themes ...
 mkdir -p $XDG_CONFIG_HOME/sway/theme
 unlink $XDG_CONFIG_HOME/sway/theme/theme.link || true
@@ -31,3 +32,5 @@ echo Unlinking and linking waybar themes ...
 mkdir -p $XDG_CONFIG_HOME/waybar
 unlink $XDG_CONFIG_HOME/waybar/style.css || true
 ln -s $XDG_CONFIG_HOME/waybar/$SWAY_THEME".css" $XDG_CONFIG_HOME/waybar/style.css
+
+

@@ -4,7 +4,11 @@ out_conf=home
 
 sleep 5
 
-# [ ! "$HOST" = "svwork" ] && exit
+if [ "$(sudo cat /etc/hostname)" = "x2sixty" ]; then
+  swaymsg output eDP-1 resolution 1920x1080 position 0 1920
+  swaymsg output DP-1 mode 1920x1080@74.924Hz position 0 0 transform 90
+  exit 0
+fi
 
 # reach_gateway() {
 #   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null

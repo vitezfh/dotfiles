@@ -22,7 +22,7 @@ ibus/
 api.json
 .zcompdump
 cli-history.txt
-
+watched-videos.txt
 
 #####################################
 # Important oddities of this config #
