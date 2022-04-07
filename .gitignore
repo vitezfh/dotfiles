@@ -17,6 +17,7 @@ Electron/
 Slack/
 dconf/
 ibus/
+packer_compiled.lua
 
 # Secrets
 api.json
