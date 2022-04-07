@@ -13,7 +13,8 @@
 #
 include /etc/sway/config.d/*
 set $confdir $HOME/.config/sway
-set $waybardir $XDG_CONFIG_HOME/waybar/
+set $scriptdir $HOME/.config/sway/scripts
+set $waybardir $XDG_CONFIG_HOME/waybar
 
 #xwayland disable
 ### VARIABLES
@@ -31,7 +32,7 @@ set $lock 'wlogout -p layer-shell -b 4'
 #                       #                          
 #                       "   
 
-exec wl-paste -t text --watch clipman store
+#exec wl-paste -t text --watch clipman store
 set $clipbored "clipman pick -t STDOUT | $fzf | wl-copy"
 
 # https://raw.githubusercontent.com/swaywm/sway/master/contrib/inactive-windows-transparency.py
@@ -67,12 +68,14 @@ set $browser chromium --enable-features=UseOzonePlatform --ozone-platform=waylan
 set $fzf fzf -i --cycle
 
 # Application launcher
-set $menu $term --class "simplemenu"
+set $menu $scriptdir/menu
 
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 exec pipewire
 exec pipewire-pulse
+
+exec blueman-applet
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or
