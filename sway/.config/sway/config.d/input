@@ -6,7 +6,7 @@ input type:mouse {
 #input "MANUFACTURER1 Keyboard" xkb_model "pc101"
 
 input type:touchpad {
- 	dwt disabled
+ 	dwt enabled
  	# events disabled_on_external_mouse true
  	tap enabled
  	natural_scroll disabled
@@ -34,8 +34,8 @@ input "0:1336:USB_OPTICAL_MOUSE" {
 	accel_profile flat
 }
 
-input "2:10:TPPS\/2_IBM_TrackPoint" {
-}
+# input "2:10:TPPS\/2_IBM_TrackPoint" {
+# }
 
 input "1133:49278:Logitech_Gaming_Mouse_G402" {
 	pointer_accel 1
