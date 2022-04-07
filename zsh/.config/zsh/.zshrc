@@ -59,19 +59,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 neofetch --size '300' --gap -22 # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
 #pfetch
 export TERM=xterm-256color
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/vitezfh/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/vitezfh/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/vitezfh/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/vitezfh/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-
+[ -f "$HOME/git/LS_COLORS/lscolors.sh" ] && source "$HOME/git/LS_COLORS/lscolors.sh"

@@ -10,7 +10,8 @@
 		"sway/mode",
 		//	"mpd",
 		"network",
-		"tray"
+		"tray",
+                "custom/buds"
 	],
 
 	"modules-center": [
@@ -177,7 +178,13 @@
 			// "critical-threshold": 80,
 			// "format-critical": "{temperatureC}°C ",
 			"format": "{temperatureC}°C "
-		}
+		},
+                "custom/buds": {
+                        "format": "{}",
+                        "exec": "./.config/waybar/buds",
+                        "interval": "60"
+}
+
 
 }, {
 "layer": "top",

@@ -32,7 +32,7 @@ set $lock 'wlogout -p layer-shell -b 4'
 #                       #                          
 #                       "   
 
-exec wl-paste -t text --watch clipman store
+#exec wl-paste -t text --watch clipman store
 set $clipbored "clipman pick -t STDOUT | $fzf | wl-copy"
 
 # https://raw.githubusercontent.com/swaywm/sway/master/contrib/inactive-windows-transparency.py
@@ -74,6 +74,8 @@ exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 exec pipewire
 exec pipewire-pulse
+
+exec blueman-applet
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or

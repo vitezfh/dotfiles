@@ -32,3 +32,4 @@ export MPD_HOST=x2sixty
 export $(dbus-launch)
 export SVDIR=~/.sv/service
 
+. "$HOME/.cargo/env"
