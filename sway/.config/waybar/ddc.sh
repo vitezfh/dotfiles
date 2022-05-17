@@ -1,11 +1,11 @@
 #!/bin/bash
 
 set_brightness() {
-	ddc-brightness $1
+	ddc-brightness $1 &
 	if [ $1 = 0 ] ; then
-		brightnessctl set 1%
+		brightnessctl set 1% &
 	else
-		brightnessctl set $1%
+		brightnessctl set $1% &
 	fi
 	echo $1 > /tmp/ddc_value
 	echo $1 > $SWAYSOCK.wob

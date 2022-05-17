@@ -39,7 +39,6 @@ set $clipbored "clipman pick -t STDOUT | $fzf | wl-copy"
 # exec $confdir/scripts/inactive-windows-transparency.py
 
 set $laptop eDP-1
-#set $fhd HDMI-A-1
 
 # Logo key and alt key
 set $mod Mod4
@@ -57,7 +56,6 @@ set $font_size exec sh .config/sway/scripts/font-size-chooser eDP-1
 
 # terminal emulator
 set $term kitty -o font_size=$($font_size) -c $XDG_CONFIG_HOME/kitty/theme.link -c $XDG_CONFIG_HOME/kitty/kitty.conf
-
 #set $term kitty -o font_size=$($font_size)
 #set $term alacritty -o font.size=$($font_size)
 
@@ -71,11 +69,10 @@ set $fzf fzf -i --cycle
 set $menu $scriptdir/menu
 
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-
 exec pipewire
 exec pipewire-pulse
-
 exec blueman-applet
+exec xrdb -load ~/.Xresources
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or
@@ -89,13 +86,8 @@ exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000
 default_border pixel 2
 default_floating_border normal
 hide_edge_borders smart
-
 #smart_gaps on
 #gaps inner 2
 
 # Include your config files here
-
-
 include $confdir/config.d/*
-
-exec xrdb -load ~/.Xresources

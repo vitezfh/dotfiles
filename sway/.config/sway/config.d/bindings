@@ -12,11 +12,14 @@
 #                K    K                                        K    K
 #                 KKKK                                          KKKK
 #
-bindsym --release $mod+c exec $menu -e zsh -c $clipbored
+# bindsym --release $mod+c exec $menu -e zsh -c $clipbored
+
 # Basics:
+
 # Start a terminal
 bindsym $mod+Return nop 
 bindsym --release $mod+Return exec $term
+
 # Reload the configuration file
 bindsym $alt+Shift+Escape reload
 
@@ -24,6 +27,7 @@ bindsym $alt+Shift+Space "$HOME/.config/sway/scripts/ibus"
 
 bindsym --release $alt+F1 exec $lock
 bindsym XF86ScreenSaver exec $lock
+
 # Kill focused window
 bindsym --release $alt+q kill
 
@@ -47,7 +51,7 @@ floating_modifier $alt normal
 set $launcher true
 # for bash
 # set $launcher "compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec"
-bindsym --release $mod+x exec $scriptdir/launcher
+bindsym --release $mod+x exec launcher
 
 bindsym --release $mod+tab exec $menu -e zsh
 # Also quick "launcher" key combos for apps (and their classic counterparts):
@@ -59,9 +63,7 @@ bindsym --release $mod+p exec $browser -incognito
 bindsym $mod+0 exec "$term --class mplayer -T mplayer -e ncmpcp
 
 # Translator
-#bindsym --release $alt+t exec "$term -o font_size=$($font_size) --class translator -e $translator -I -show-alternatives y -show-dictionary n -show-original-phonetics n -show-original n -show-languages n -show-prompt-message n -show-translation n"
-bindsym --release $alt+t exec "notify-send $(trans -b $(wl-paste -p))"
-
+#bindsym --release $alt+t exec "$term -o font_size=$($font_size) --class translator -e $translator -I -show-alternatives y -show-dictionary n -show-original-phonetics n -show-original n -show-languages n -show-prompt-message n -show-translation n" bindsym --release $alt+t exec "notify-send $(trans -b $(wl-paste -p))"
 ####### Media/FN Key/Other Single key bindings:
 # Brightness
 bindsym XF86MonBrightnessUp exec 'brightnessctl set +2%'
@@ -69,13 +71,18 @@ bindsym XF86MonBrightnessDown exec 'brightnessctl -n set 2%-'
 bindsym Shift+XF86MonBrightnessDown exec 'brightnessctl set 0'
 
 # Music player controller bindings:
-bindsym XF86AudioPlay exec "mpc toggle"
-bindsym $alt+Down exec "mpc toggle"
-bindsym XF86AudioStop exec "mpc stop"
-bindsym XF86AudioPrev exec "mpc prev"
-bindsym $alt+Left exec "mpc prev"
-bindsym XF86AudioNext exec "mpc next"
-bindsym $alt+Right exec "mpc next"
+#bindsym XF86AudioPlay exec "mpc toggle"
+#bindsym $alt+Down exec "mpc toggle"
+#bindsym XF86AudioStop exec "mpc stop"
+#bindsym XF86AudioPrev exec "mpc prev"
+#bindsym $alt+Left exec "mpc prev"
+#bindsym XF86AudioNext exec "mpc next"
+#bindsym $alt+Right exec "mpc next"
+
+bindsym $alt+Down exec "playerctl play-pause"
+bindsym $alt+Left exec "playerctl previous"
+bindsym $alt+Right exec "playerctl next"
+
 # Audio Control:
 bindsym XF86AudioMicMute exec "pulsemixer --id source-1 --toggle-mute"
 bindsym XF86AudioMute exec "pulsemixer --toggle-mute"

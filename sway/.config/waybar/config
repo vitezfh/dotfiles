@@ -11,7 +11,7 @@
 		//	"mpd",
 		"network",
 		"tray",
-                "custom/buds"
+                "custom/playing"
 	],
 
 	"modules-center": [
@@ -164,7 +164,8 @@
 		//},
 		"tray": {
 			"icon-size": 20,
-			"spacing": 7
+			"spacing": 7,
+                        "margin-right": 7
 		},
 
 		"sway/language": {
@@ -179,10 +180,10 @@
 			// "format-critical": "{temperatureC}°C ",
 			"format": "{temperatureC}°C "
 		},
-                "custom/buds": {
+                "custom/playing": {
                         "format": "{}",
-                        "exec": "./.config/waybar/buds",
-                        "interval": "60"
+                        "exec": "playerctl metadata -F xesam:title",
+                        "max-length": 40
 }
 
 
@@ -191,7 +192,8 @@
 "name": "side2",
 "output": [
 	"DP-1",
-	"HDMI-A-1" 
+	"HDMI-A-1",
+	"DP-2" 
 ],
 "position": "left",
 "modules-left": [

@@ -1,0 +1,12 @@
+# Start a terminal
+bindsym $mod+Return nop 
+bindsym --release $mod+Return exec $term
+
+bindsym --release $alt+F1 exec $lock
+bindsym XF86ScreenSaver exec $lock
+
+#Wallpaper changers
+bindsym --release $mod+d exec $scriptdir/menu bash -e $HOME/.scripts/change_background
+bindsym --release $mod+Shift+d exec $HOME/.scripts/change_background_imv
+
+bindsym $alt+p exec grim -g "$(slurp -d)" - | wl-copy -t "image/png"
