@@ -52,7 +52,8 @@ super + Return
 
 # program launcher
 super + x
-   binlauncher
+   rofi -combi-modi window,drun,ssh -theme solarized -font "hack 14" -show combi -icon-theme "Papirus" -show-icons
+   #rofi -combi-modi window,drun,ssh -theme solarized -font "hack 14" -show combi
 
 # Dropdown terminal
 #super + dead_circumflex
@@ -63,12 +64,12 @@ super + x
 #	st -e htop
 ###################}}}
 
-####### SECURITY{{{
+####### SECURITY {{{
 # lockscreen
 super + F1
-	logoff
+	./.config/rofi/bin/powermenu
 
-#############}}}
+############# }}}
 
 ###### DISPLAY{{{
 
@@ -132,9 +133,9 @@ super + shift + {h,j,k,l}
 super + shift + c
 	bspc node -f next.local
 
-# focus the next/previous desktop in the current monitor
-super + {comma,period}
-	bspc desktop -f {prev,next}
+# # focus the next/previous desktop in the current monitor
+# super + {comma,period}
+# 	bspc desktop -f {prev,next}
 
 # focus or send to the given desktop
 super + {_,shift} + {1-9,0}
