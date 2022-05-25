@@ -47,8 +47,8 @@ bindkey -v '^?' backward-delete-char
 
 export KEYTIMEOUT=1
 
-[ -f /usr/share/doc/fzf/completion.zsh ] && source /usr/share/doc/fzf/completion.zsh
-[ -f /usr/share/doc/fzf/key-bindings.zsh ] && source /usr/share/doc/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f $HOME/git/fzf/shell/completion.zsh ] && source $HOME/git/fzf/shell/completion.zsh 
 [ -f $HOME/git/fzf/shell/key-bindings.zsh ] && source $HOME/git/fzf/shell/key-bindings.zsh 
 # source <(cod init $$ zsh)
