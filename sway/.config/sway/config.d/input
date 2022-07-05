@@ -20,7 +20,7 @@ input type:keyboard {
  	xkb_options "caps:escape,grp:win_space_toggle"
 }
 
-input '2:8:AlpsPS/2_ALPS_DualPoint_Stick' events disabled
+input '2:8:AlpsPS/2_ALPS_DualPoint_Stick' events enabled
 
 ##
 #

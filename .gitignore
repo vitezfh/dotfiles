@@ -23,7 +23,7 @@ packer_compiled.lua
 api.json
 .zcompdump
 cli-history.txt
-watched-videos.txt
+watched_videos.txt
 
 #####################################
 # Important oddities of this config #

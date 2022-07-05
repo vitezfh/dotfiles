@@ -48,10 +48,10 @@ floating_modifier $alt normal
 
 ####### Start your launcher
 # for zsh (and maybe Korn?)
-set $launcher true
+set $launcher wofi --show run
 # for bash
 # set $launcher "compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec"
-bindsym --release $mod+x exec launcher
+bindsym --release $mod+x exec $launcher
 
 bindsym --release $mod+tab exec $menu -e zsh
 # Also quick "launcher" key combos for apps (and their classic counterparts):
