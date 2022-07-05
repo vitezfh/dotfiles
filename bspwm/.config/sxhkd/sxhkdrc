@@ -48,7 +48,7 @@ super + shift + w
 
 ######### terminal emulator{{{
 super + Return
-  kitty -c $XDG_CONFIG_HOME/kitty/theme.link -c $XDG_CONFIG_HOME/kitty/kitty.conf
+  mykitty || kitty
 
 # program launcher
 super + x
@@ -56,8 +56,8 @@ super + x
    #rofi -combi-modi window,drun,ssh -theme solarized -font "hack 14" -show combi
 
 # Dropdown terminal
-#super + dead_circumflex
-#	st -c stpopup -t stpopup
+super + Tab
+	simplemenu || mykitty --class simplemenu
 #
 # htop
 #ctrl + shift + Escape
