@@ -31,5 +31,6 @@ export XBPS_DISTDIR=/home/vitezfh/git/void-packages
 export MPD_HOST=x2sixty
 export $(dbus-launch)
 export SVDIR=~/.sv/service
-
+export PAGER="nvim -R"
+export MANPAGER='nvim +Man!'
 . "$HOME/.cargo/env"

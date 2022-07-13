@@ -12,8 +12,7 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
 
-path+=("$HOME/.scripts")
-path+=("$HOME/.local/bin")
+PATH="$HOME/.scripts:$HOME/.local/bin:$PATH"
 export PATH
 autoload -U promptinit; promptinit
 
