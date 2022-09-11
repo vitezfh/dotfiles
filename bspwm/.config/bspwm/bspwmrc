@@ -4,16 +4,11 @@ sxhkd &
 picom --experimental-backends &
 dunst &
 $HOME/.fehbg &
-# bspc monitor DP-2 -d  
-bspc monitor HDMI2  -d I   II  III IV V VI  
-bspc monitor eDP1 -d VII IIX IX  X 
  
-
 # bspc monitor DP-2 -d 
 ###################################################
 #                     |    |    |    |    |   |   #    
-bspc monitor DP-3  -d  I    II   III  IV   V   VI #
-bspc monitor eDP-1 -d  VII  IIX  IX   X           #
+bspc monitor eDP1  -d  I    II   III  IV   V   VI #
 #                     |    |    |    |    |   |   #    
 ###################################################
 bspc config border_width               1
