@@ -55,8 +55,8 @@ export KEYTIMEOUT=1
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 #moon
-neofetch --size '300' --gap -22 # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
+neofetch --size '300' # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
 #pfetch
 export TERM=xterm-256color
 
-source /home/vitezfh/.config/broot/launcher/bash/br
+# source /home/vitezfh/.config/broot/launcher/bash/br

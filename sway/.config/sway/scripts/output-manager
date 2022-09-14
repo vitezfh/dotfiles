@@ -41,9 +41,9 @@ else
   swaymsg output DP-2 \
                   mode 1920x1080 \
                   position 0 0
-  swaymsg output DP-3 \
+  swaymsg output HDMI-A-1 \
                   mode 3440x1440@99.943001Hz \
                   position 1920 0 \
-                  adaptive_sync on 
+                  adaptive_sync off 
   # echo home > /tmp/sway_output_conf
 fi

@@ -34,4 +34,14 @@ print_box_drawing_chars() {
 	for i in 6a 6b 6c 6d 6e 71 74 75 76 77 78; do printf "0x$i \x$i \x1b(0\x$i\x1b(B\n"; done
 }
 
+function setgov()
+{
+    echo "$1" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor 
+}
 
+function ltree()
+{
+  #ls -aR | grep ":$" | perl -pe 's/:$//;s/[^-][^\/]*\//    /g;s/^    (\S)/└── \1/;s/(^    |    (?= ))/│   /g;s/    (\S)/└── \1/'
+  ls -aR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//  /g'
+
+}

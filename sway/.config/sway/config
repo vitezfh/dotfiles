@@ -70,9 +70,12 @@ set $menu $scriptdir/menu
 
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec pipewire
-exec pipewire-pulse
+exec a2ln 6565
 exec blueman-applet
 exec xrdb -load ~/.Xresources
+
+exec eval $(gnome-keyring-daemon --start)
+exec export SSH_AUTH_SOCK
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or
@@ -86,8 +89,8 @@ exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000
 default_border pixel 2
 default_floating_border normal
 hide_edge_borders smart
-#smart_gaps on
-#gaps inner 2
+smart_gaps on
+gaps inner 8
 
 # Include your config files here
 include $confdir/config.d/*
