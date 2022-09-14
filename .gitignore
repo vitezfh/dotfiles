@@ -24,6 +24,7 @@ api.json
 .zcompdump
 cli-history.txt
 watched_videos.txt
+instances.json
 
 #####################################
 # Important oddities of this config #
