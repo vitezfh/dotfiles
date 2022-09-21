@@ -14,19 +14,19 @@ fi
 #   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
 # }
 reach_gateway() {
-  ip a | grep '178.33'
+  ip a | grep '192.168.99.'
 }
 
 # see if home
 if reach_gateway
 then
-  out_conf=home
+  out_conf=work
 fi
 
 if [ "$out_conf" = "work" ]
 then
   # Work
-  swaymsg output DP-3 \
+  swaymsg output HDMI-A-1 \
                   resolution 1920x1080 \
                   position 0 0
   swaymsg output eDP-1 \

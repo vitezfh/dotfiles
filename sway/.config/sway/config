@@ -60,7 +60,7 @@ set $term kitty -o font_size=$($font_size) -c $XDG_CONFIG_HOME/kitty/theme.link 
 #set $term alacritty -o font.size=$($font_size)
 
 # Browser
-set $browser chromium --enable-features=UseOzonePlatform --ozone-platform=wayland
+set $browser chromium
 
 # FZF CONFIG
 set $fzf fzf -i --cycle
@@ -73,9 +73,9 @@ exec pipewire
 exec a2ln 6565
 exec blueman-applet
 exec xrdb -load ~/.Xresources
+exec dbus-update-activation-environment --all
 
-exec eval $(gnome-keyring-daemon --start)
-exec export SSH_AUTH_SOCK
+exec export $(gnome-keyring-daemon --replace --components=secrets)
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or
