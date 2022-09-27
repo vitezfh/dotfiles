@@ -50,7 +50,8 @@ alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -v" \
-	mkd="mkdir -pv" 
+	mkd="mkdir -pv" \
+	lsdla="lsd -la" 
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \

@@ -19,11 +19,22 @@ if [ "$(cat /etc/hostname)" = "hex" ]; then
                   position 1920 0 \
                   adaptive_sync off
   exit 0
+# reach_gateway() {
+#   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
+# }
+reach_gateway() {
+  ip a | grep '192.168.99.'
+}
+
+# see if home
+if reach_gateway
+then
+  out_conf=work
 fi
 
 if [ "$(cat /etc/hostname)" = "svwork" ]; then
   # Work
-  swaymsg output DP-3 \
+  swaymsg output HDMI-A-1 \
                   resolution 1920x1080 \
                   position 0 0
   swaymsg output eDP-1 \
@@ -38,7 +49,7 @@ else
   swaymsg output DP-2 \
                   mode 1920x1080 \
                   position 0 0
-  swaymsg output DP-3 \
+  swaymsg output HDMI-A-1 \
                   mode 3440x1440@99.943001Hz \
                   position 1920 0 \
                   adaptive_sync off 

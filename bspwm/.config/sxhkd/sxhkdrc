@@ -52,12 +52,16 @@ super + Return
 
 # program launcher
 super + x
-   rofi -combi-modi window,drun,ssh -theme solarized -font "hack 14" -show combi -icon-theme "Papirus" -show-icons
+   rofi -combi-modi window,run,ssh -theme solarized -font "hack 14" -show combi -icon-theme "Papirus" -show-icons -terminal mykitty
    #rofi -combi-modi window,drun,ssh -theme solarized -font "hack 14" -show combi
 
 # Dropdown terminal
 super + Tab
 	simplemenu || mykitty --class simplemenu
+
+# Dropdown terminal
+super + @space
+	bspwm-hide-polybar
 #
 # htop
 #ctrl + shift + Escape
