@@ -19,6 +19,7 @@
 # Start a terminal
 bindsym $mod+Return nop 
 bindsym --release $mod+Return exec $term
+bindsym --release Ctrl+Shift+$alt+Return exec $term
 
 # Reload the configuration file
 bindsym $alt+Shift+Escape reload

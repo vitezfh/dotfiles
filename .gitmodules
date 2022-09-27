@@ -1,3 +1,6 @@
 [submodule "media/.config/mpv/scripts/mpv2anki"]
 	path = media/.config/mpv/scripts/mpv2anki
 	url = https://github.com/vitezfh/mpv2anki
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
+	url = https://github.com/nvchad/nvchad
