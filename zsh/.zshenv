@@ -15,7 +15,7 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 #export JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk/"
 export JAVA_HOME="/usr/lib/jvm/openjdk11/"
 #export MOZ_ENABLE_WAYLAND=1
-# export VIRSH_DEFAULT_CONNECT_URI="qemu+ssh://vitezfh@hyrican/system"
+export VIRSH_DEFAULT_CONNECT_URI="qemu:///system"
 
 #export XDG_CURRENT_DESKTOP=Unity ##was enabled
 
