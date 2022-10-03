@@ -4,29 +4,37 @@ out_conf=home
 
 sleep 5
 
-if [ "$(sudo cat /etc/hostname)" = "x2sixty" ]; then
+if [ "$(cat /etc/hostname)" = "x2sixty" ]; then
   swaymsg output eDP-1 resolution 1920x1080 position 0 1920
   swaymsg output DP-1 mode 1920x1080@74.924Hz position 0 0 transform 90
   exit 0
 fi
 
+if [ "$(cat /etc/hostname)" = "hex" ]; then
+  swaymsg output HDMI-A-2 \
+                  resolution 1920x1080 \
+                  position 0 0
+  swaymsg output DP-3 \
+                  mode 3440x1440@99.982Hz \
+                  position 1920 0 \
+                  adaptive_sync off
+  exit 0
 # reach_gateway() {
 #   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
 # }
 reach_gateway() {
-  ip a | grep '178.33'
+  ip a | grep '192.168.99.'
 }
 
 # see if home
 if reach_gateway
 then
-  out_conf=home
+  out_conf=work
 fi
 
-if [ "$out_conf" = "work" ]
-then
+if [ "$(cat /etc/hostname)" = "svwork" ]; then
   # Work
-  swaymsg output DP-3 \
+  swaymsg output HDMI-A-1 \
                   resolution 1920x1080 \
                   position 0 0
   swaymsg output eDP-1 \

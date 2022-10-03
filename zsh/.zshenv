@@ -15,7 +15,7 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 #export JAVA_HOME="/usr/lib/jvm/java-1.8-openjdk/"
 export JAVA_HOME="/usr/lib/jvm/openjdk11/"
 #export MOZ_ENABLE_WAYLAND=1
-# export VIRSH_DEFAULT_CONNECT_URI="qemu+ssh://vitezfh@hyrican/system"
+export VIRSH_DEFAULT_CONNECT_URI="qemu:///system"
 
 #export XDG_CURRENT_DESKTOP=Unity ##was enabled
 
@@ -28,7 +28,7 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export XBPS_DISTDIR=/home/vitezfh/git/void-packages
-export MPD_HOST=x2sixty
+#export MPD_HOST=x2sixty
 export $(dbus-launch)
 export PAGER="nvim -R"
 export MANPAGER='nvim +Man!'

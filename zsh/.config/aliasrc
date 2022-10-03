@@ -3,6 +3,8 @@
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
+alias x="hx"
+
 alias aria2c="aria2c -u 1K --max-download-limit=8M"
 
 alias icat="kitty +kitten icat"
