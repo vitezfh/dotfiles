@@ -33,6 +33,16 @@ then
 fi
 
 if [ "$(cat /etc/hostname)" = "svwork" ]; then
+  # echo work > /tmp/sway_output_conf
+  # Home
+  swaymsg output HDMI-A-1 \
+                  mode 3440x1440@99.943001Hz \
+                  position 0 0 \
+                  adaptive_sync off
+  swaymsg output eDP-1 \
+                  mode 1920x1080 \
+                  position 1200 1440
+else
   # Work
   swaymsg output HDMI-A-1 \
                   resolution 1920x1080 \
@@ -40,18 +50,5 @@ if [ "$(cat /etc/hostname)" = "svwork" ]; then
   swaymsg output eDP-1 \
                   resolution 1920x1080 \
                   position 1920 760
-  # echo work > /tmp/sway_output_conf
-else
-  # Home
-  swaymsg output eDP-1 \
-                  mode 1920x1080 \
-                  position 2800 1440
-  swaymsg output DP-2 \
-                  mode 1920x1080 \
-                  position 0 0
-  swaymsg output HDMI-A-1 \
-                  mode 3440x1440@99.943001Hz \
-                  position 1920 0 \
-                  adaptive_sync off 
   # echo home > /tmp/sway_output_conf
 fi
