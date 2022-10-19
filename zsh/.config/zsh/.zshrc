@@ -48,6 +48,12 @@ bindkey -v '^?' backward-delete-char
 
 export KEYTIMEOUT=1
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/vitezfh/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/home/vitezfh/.local/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/vitezfh/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/vitezfh/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
+
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f $HOME/git/fzf/shell/completion.zsh ] && source $HOME/git/fzf/shell/completion.zsh 
@@ -60,5 +66,5 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 neofetch --size '300' # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
 #pfetch
 export TERM=xterm-256color
-
 # source /home/vitezfh/.config/broot/launcher/bash/br
+

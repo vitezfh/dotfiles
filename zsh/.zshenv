@@ -2,7 +2,7 @@ export REDDIO_LIB="$HOME"/.local/share/reddio
 
 export TERM=xterm-256color
 
-export EDITOR=nvim
+export EDITOR=hx
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 export ZDOTDIR="$HOME/.config/zsh/"
