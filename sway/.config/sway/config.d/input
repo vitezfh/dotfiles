@@ -6,7 +6,7 @@ input type:mouse {
 #input "MANUFACTURER1 Keyboard" xkb_model "pc101"
 
 input type:touchpad {
- 	dwt enabled
+ 	dwt disabled
  	# events disabled_on_external_mouse true
  	tap enabled
  	natural_scroll disabled
