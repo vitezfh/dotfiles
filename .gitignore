@@ -6,6 +6,7 @@
 *.pid
 *.tdb
 *.bak
+*.zcompdum*
 
 # Machine specific configs/junk
 pipewire/
@@ -34,3 +35,4 @@ scripts/
 dotfile.conf
 *.link
 #####################################
+

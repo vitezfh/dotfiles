@@ -6,7 +6,8 @@ sleep 4
 
 if [ "$(cat /etc/hostname)" = "x2sixty" ]; then
   swaymsg output DP-1 mode 3440x1440@99.982Hz position 0 0
-  swaymsg output eDP-1 resolution 1920x1080 position 300 1440
+  swaymsg output DP-1 mode 1920x1080@74.924Hz position 0 0
+  swaymsg output eDP-1 resolution 1920x1080 position 500 1080
   exit 0
 fi
 

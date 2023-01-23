@@ -45,3 +45,8 @@ function ltree()
   ls -aR | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//  /g'
 
 }
+
+function bat_ds4()
+{
+	for ds4 in $(upower -e | grep sony_controller); do upower -i $ds4 | grep percentage; done 
+}
