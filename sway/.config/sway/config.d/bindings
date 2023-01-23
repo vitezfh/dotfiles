@@ -28,6 +28,8 @@ bindsym $mod+Shift+Space "$HOME/.config/sway/scripts/ibus"
 bindsym --release $mod+F1 exec $lock
 bindsym XF86ScreenSaver exec $lock
 
+bindsym --release XF86Explorer exec yee
+
 # Kill focused window
 bindsym --release $mod+q kill
 
@@ -48,7 +50,7 @@ floating_modifier $mod normal
 
 ####### Start your launcher
 # for zsh (and maybe Korn?)
-set $launcher wofi --show run
+set $launcher rofi -show run
 # for bash
 # set $launcher "compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec"
 bindsym --release $mod+x exec $launcher
@@ -58,6 +60,8 @@ bindsym --release $mod+tab exec $menu -e zsh
 # Browser
 bindsym --release $mod+i exec $browser 
 bindsym --release $mod+p exec $browser --private
+
+bindsym --release $mod+b exec rofi-rbw
 
 # Music player controller:
 #bindsym $mod+0 exec "$term --class mplayer -T mplayer -e ncmpcp
@@ -171,11 +175,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 #
 # Layout stuff:
 #
-# You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
-# respectively.
- bindsym $mod+b splith
- bindsym $mod+v splitv
+ bindsym $mod+v splitt
 
 
 

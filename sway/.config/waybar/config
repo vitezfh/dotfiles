@@ -11,7 +11,8 @@
 		//	"mpd",
 		"network",
 		"tray",
-                "custom/playing"
+                "custom/playing",
+                "custom/rofi_bluetooth"
 	],
 
 	"modules-center": [
@@ -185,6 +186,12 @@
                         "format": "{}",
                         "exec": "playerctl metadata -F xesam:title",
                         "max-length": 40
+		},
+                "custom/rofi_bluetooth": {
+                        "format": " {}",
+                        "exec": "rofi-bluetooth --status",
+												"on-click": "rofi-bluetooth",
+                        "max-length": 3
 }
 
 

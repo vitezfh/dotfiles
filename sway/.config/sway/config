@@ -82,8 +82,8 @@ exec export $(gnome-keyring-daemon --replace --components=secrets)
 # if just exec, you get no mako at all...
 exec pkill mako
 #exec pkill dbus-daemon
-#exec_always dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
-exec_always mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
+#exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+exec mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
 
 # Borders and gaps
 default_border pixel 2
