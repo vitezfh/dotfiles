@@ -11,8 +11,8 @@ if [ "$(cat /etc/hostname)" = "x2sixty" ]; then
 fi
 
 if [ "$(cat /etc/hostname)" = "hex" ]; then
-  swaymsg output HDMI-A-2 \
-                  resolution 1920x1080 \
+  swaymsg output HDMI-A-1 \
+                  resolution 1920x1080@75.025Hz \
                   position 0 0
   swaymsg output DP-3 \
                   mode 3440x1440@99.982Hz \

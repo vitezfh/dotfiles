@@ -66,5 +66,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 neofetch --size '300' # --colors 15 7 7 15 7 7 --ascii_colors 5 13 2 5 2 2
 #pfetch
 export TERM=xterm-256color
+ # autologin on tty1
+#if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ] && [ "$HOSTNAME" -eq "hex" ] ; then
+#  exec startx
+#fi
 # source /home/vitezfh/.config/broot/launcher/bash/br
 
