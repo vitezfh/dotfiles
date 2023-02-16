@@ -8,11 +8,11 @@ echo Cloning git@github.com:vitezfh/.scripts.git to scripts/.scripts ...
 git clone git@github.com:vitezfh/.scripts.git $HOME/dotfiles/scripts/.scripts 2> /dev/null || true
 
 echo Checking if dotfile-config present ...
-[ -f dotfile.conf ] || \
-  ( echo Missing dotfile-config file, please make one first && exit 1)
+[ -f config ] || \
+  ( echo Missing ./config file, please make one first && exit 1)
 
 echo Sourcing that config ...
-. $HOME/dotfiles/dotfile.conf
+. $HOME/dotfiles/config
 
 echo Running stow on $TO_DEPLOY ...
 stow $TO_DEPLOY
