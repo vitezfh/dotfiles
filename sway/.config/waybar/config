@@ -164,7 +164,7 @@
 		//	"path": "/"
 		//},
 		"tray": {
-			"icon-size": 20,
+			"icon-size": 40,
 			"spacing": 7,
                         "margin-right": 7
 		},
@@ -201,26 +201,31 @@
 "output": [
 	"DP-1",
 	"HDMI-A-1",
-	"DP-2" 
+	"DP-2"
 ],
 "position": "left",
 "modules-left": [
 	"sway/workspaces"
 ],
-"sway/workspaces": {
-	"disable-scroll": true,
-	"format": "{name}"
-}
+"modules-right": [
+	"custom/rofi",
+	"custom/yee",
+	"custom/ddc"
+],
 }, {
 "layer": "top",
 "name": "side1",
-"output": "DP-3",
+"output": [
+      "DP-3",
+      "HEADLESS-1"
+    ],
 "position": "right",
 "modules-left": [
 	"sway/workspaces"
 ],
 
 "modules-right": [
+	"custom/rofi",
 	"custom/yee",
 	"custom/ddc"
 ],
@@ -234,6 +239,11 @@
 "custom/yee": {
 	"format": "🔮",
 	"on-click": "./.config/waybar/yee.sh"
+},
+
+"custom/rofi": {
+	"format": "↲",
+	"on-click": "rofi -show run"
 },
 
 "custom/ddc": {

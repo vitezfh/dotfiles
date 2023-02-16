@@ -19,6 +19,9 @@ if [ "$(cat /etc/hostname)" = "hex" ]; then
                   mode 3440x1440@99.982Hz \
                   position 1920 0 \
                   adaptive_sync off
+  #swaymsg create_output HEADLESS-1
+  swaymsg output HEADLESS-1 \
+                  mode 2400x1080@90Hz
   exit 0
 fi
 # reach_gateway() {
