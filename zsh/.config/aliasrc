@@ -27,15 +27,15 @@ alias gcm="git commit -m"
 alias wf-cutout='$(wf-recorder -g "$(slurp)")'
 
 # 3rd party tools (non-portable/uncommon)
-#alias ssh="kitty +kitten ssh" 
-#alias wget="wget --continue --limit-rate=9M" 
+#alias ssh="kitty +kitten ssh"
+#alias wget="wget --continue --limit-rate=9M"
 alias pomodoro='sleep 25m && paplay wow.wav & notify-send "Time is up!"'
-alias ytd="youtube-dl --add-metadata -i --default-search 'ytsearch' " 
-alias ytda="youtube-dl --default-search 'ytsearch' -i -x -f bestaudio/best" 
-alias ytv="youtube-viewer" 
-alias ytva="youtube-viewer -n" 
-alias ffmpeg="ffmpeg -hide_banner" 
-alias lolcat="lolcat -l" 
+alias ytd="yt-dlp --add-metadata -i --default-search 'ytsearch' "
+alias ytda="yt-dlp --default-search 'ytsearch' -i -x -f bestaudio/best"
+alias ytv="youtube-viewer"
+alias ytva="youtube-viewer -n"
+alias ffmpeg="ffmpeg -hide_banner"
+alias lolcat="lolcat -l"
 alias maxlight='lamp brightness 100 && lamp temperature 3900'
 alias brightlight='lamp brightness 30 && lamp temperature 2500'
 alias medlight='lamp brightness 8 && lamp temperature 2500'
@@ -50,7 +50,7 @@ alias \
 	mv="mv -iv" \
 	rm="rm -v" \
 	mkd="mkdir -pv" \
-	lsdla="lsd -la" 
+	lsdla="lsd -la"
 # Colorize commands when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \

@@ -201,7 +201,8 @@
 "output": [
 	"DP-1",
 	"HDMI-A-1",
-	"DP-2"
+	"DP-2",
+	"DP-4"
 ],
 "position": "left",
 "modules-left": [

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=syncthing
+Comment=file sync app
+Exec=syncthing
+Terminal=false
+Type=Application
+Hidden=true

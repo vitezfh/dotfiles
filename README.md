@@ -1,5 +1,5 @@
 # dotfiles - wayland
-Selection of my .files files for your ricing needs:
+Selection of my .files files for my ricing needs:
 
 
 swaywm, waybar and kitty.
@@ -10,7 +10,8 @@ Some submodules are included (my daily-use https://github.com/vitezfh/.scripts a
 
 ## To-Do
 
-- [ ] sepparate into branches for work, home, personal laptop
+- [ ] separate into branches for work, home, personal laptop
+    - or just use the config as-is?
 - [ ] integrate into bootstrap script w/ ansible role/playbook
 - [X] theming system sync for sway, kitty, waybar, etc.
 - [ ] ...
@@ -21,5 +22,5 @@ Some submodules are included (my daily-use https://github.com/vitezfh/.scripts a
  - Some things are 
 
 ## Screencaps
-OUTDATED: The left is blown up because it's FHD on a x260 Thinkpad; the right is a secondary display.
+OUTDATED: The left is blown up because it's FHD on a notebook; the right is a secondary display.
 ![Screencap1](.screenshots/screenshot1.png)

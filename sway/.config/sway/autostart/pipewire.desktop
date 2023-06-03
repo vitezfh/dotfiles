@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=pipewire
+Comment=Sound System for Linux
+Exec=pipewire
+Terminal=false
+Type=Application
+Hidden=true
