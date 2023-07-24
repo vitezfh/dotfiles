@@ -50,7 +50,7 @@ floating_modifier $mod normal
 
 ####### Start your launcher
 # for zsh (and maybe Korn?)
-set $launcher rofi -show run
+set $launcher wofi --show run
 # for bash
 # set $launcher "compgen -c | sort -u | fzf | xargs -r swaymsg -t command exec"
 bindsym --release $mod+x exec $launcher

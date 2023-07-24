@@ -14,7 +14,7 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_BEEP
 
 
-PATH="$HOME/.scripts:$HOME/.local/bin:$PATH"
+PATH="$HOME/.scripts:$HOME/.local/bin:$PATH:$HOME/.cargo/bin"
 export PATH
 autoload -U promptinit; promptinit
 

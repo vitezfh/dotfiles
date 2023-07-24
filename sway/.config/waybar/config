@@ -6,7 +6,7 @@
 	"position": "bottom",
 
 	"modules-left": [
-		"sway/workspaces",
+		"wlr/workspaces",
 		"sway/mode",
 		//	"mpd",
 		"network",
@@ -40,7 +40,7 @@
 		"on-click-middle": "close"
 	},
 
-	"sway/workspaces": {
+	"wlr/workspaces": {
 		"disable-scroll": true,
 		"format": "{name}"
 	},
@@ -206,7 +206,7 @@
 ],
 "position": "left",
 "modules-left": [
-	"sway/workspaces"
+	"wlr/workspaces"
 ],
 "modules-right": [
 	"custom/rofi",
@@ -222,7 +222,7 @@
     ],
 "position": "right",
 "modules-left": [
-	"sway/workspaces"
+	"wlr/workspaces"
 ],
 
 "modules-right": [
@@ -231,7 +231,7 @@
 	"custom/ddc"
 ],
 
-"sway/workspaces": {
+"wlr/workspaces": {
 	"disable-scroll": true,
 	"format": "{name}"
 },
@@ -259,7 +259,7 @@
     "output": "eDP-1",
     "position": "bottom",
     "modules-left": [
-      "sway/workspaces",
+      "wlr/workspaces",
       "sway/mode",
       //	"mpd",
       "network",
@@ -290,7 +290,7 @@
       "on-click": "activate",
       "on-click-middle": "close"
     },
-    "sway/workspaces": {
+    "wlr/workspaces": {
       "disable-scroll": true,
       "format": "{name}"
     },
@@ -443,9 +443,9 @@
     ],
     "position": "left",
     "modules-left": [
-      "sway/workspaces"
+      "wlr/workspaces"
     ],
-    "sway/workspaces": {
+    "wlr/workspaces": {
       "disable-scroll": true,
       "format": "{name}"
     }
@@ -456,13 +456,13 @@
     "output": "DP-3",
     "position": "right",
     "modules-left": [
-      "sway/workspaces"
+      "wlr/workspaces"
     ],
     "modules-right": [
       "custom/yee",
       "custom/ddc"
     ],
-    "sway/workspaces": {
+    "wlr/workspaces": {
       "disable-scroll": true,
       "format": "{name}"
     },
