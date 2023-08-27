@@ -2,58 +2,32 @@
 set -ex
 out_conf=home
 
-sleep 4
+sleep 2
 
-if [ "$(cat /etc/hostname)" = "x2sixty" ]; then
-  swaymsg output DP-1 mode 3440x1440@99.982Hz position 0 0
-  swaymsg output DP-1 mode 1920x1080@74.924Hz position 0 0
-  swaymsg output eDP-1 resolution 1920x1080 position 500 1080
-  exit 0
-fi
-
-if [ "$(cat /etc/hostname)" = "hex" ]; then
-  swaymsg output HDMI-A-1 \
-                  resolution 1920x1080@75.025Hz \
-                  position 0 0
-  swaymsg output DP-3 \
-                  mode 3440x1440@99.982Hz \
-                  position 1920 0 \
-                  adaptive_sync off
-  #swaymsg create_output HEADLESS-1
-  swaymsg output HEADLESS-1 \
-                  mode 2400x1080@90Hz
-  exit 0
-fi
 # reach_gateway() {
 #   ip neigh show dev wlan0 to $1 | grep REACHABLE &>/dev/null
 # }
 reach_gateway() {
-  ip a | grep '192.168.99.'
+	ip a | grep '192.168.99.'
 }
 
-# see if home
-if reach_gateway
-then
-  out_conf=work
+if [ "$(cat /etc/hostname)" = "x2sixty" ]; then
+	swaymsg output DP-1 mode 1920x1080@74.924Hz position 0 0
+	swaymsg output eDP-1 resolution 1920x1080 position 0 0
 fi
 
-if [ "$(cat /etc/hostname)" = "svwork" ]; then
-  # echo work > /tmp/sway_output_conf
-  # Home
-  swaymsg output HDMI-A-1 \
-                  mode 3440x1440@99.943001Hz \
-                  position 0 0 \
-                  adaptive_sync off
-  swaymsg output eDP-1 \
-                  mode 1920x1080 \
-                  position 1200 1440
-else 
-  # Work
-  swaymsg output HDMI-A-1 \
-                  resolution 1920x1080 \
-                  position 0 0
-  swaymsg output eDP-1 \
-                  resolution 1920x1080 \
-                  position 1920 760
-  # echo home > /tmp/sway_output_conf
+if [ "$(cat /etc/hostname)" = "hex" ]; then
+	#AOC 3440x1440@99.982Hz
+	swaymsg output DP-3 \
+		mode 3440x1440@99.982Hz \
+		position 0 0 \
+		adaptive_sync off
+	#AOC 1080p@75.025Hz
+	swaymsg output HDMI-A-1 \
+		resolution 1920x1080@75.025Hz \
+		adaptive_sync off
+	#position 0 0
+	#swaymsg create_output HEADLESS-1
+	#swaymsg output HEADLESS-1 \
+	#mode 2400x1080@90Hz
 fi

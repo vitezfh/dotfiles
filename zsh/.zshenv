@@ -24,7 +24,8 @@ export SVDIR=~/.service/enabled
 export XDG_CURRENT_DESKTOP=sway
 export GDK_BACKEND=wayland
 #export QT_QPA_PLATFORM=wayland-egl
-export SDL_VIDEODRIVER=wayland
+export QT_QPA_PLATFORM=wayland
+export SDL_VIDEODRIVER="wayland,x11"
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

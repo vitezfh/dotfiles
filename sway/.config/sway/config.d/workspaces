@@ -1,3 +1,4 @@
+#workspace sunshine output HEADLESS-1 HEADLESS-2 HEADLESS-3 HEADLESS-4
 # Menus, etc.
 for_window [app_id="simplemenu"] {
 	floating enable
@@ -18,7 +19,7 @@ for_window [class="webcam"] {
 }
 
 # Media
-assign [app_id="mplayer"] workspace 10 
+#assign [app_id="mplayer"] workspace 10 
 #assign [app_id="mpv"] workspace mpv
 #assign [app_id="player"] workspace music
 #assign [app_id="imv"] workspace music
