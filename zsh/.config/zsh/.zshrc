@@ -54,10 +54,16 @@ if [ -f '/home/vitezfh/.local/share/google-cloud-sdk/path.zsh.inc' ]; then . '/h
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/vitezfh/.local/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/vitezfh/.local/share/google-cloud-sdk/completion.zsh.inc'; fi
 
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f $HOME/git/fzf/shell/completion.zsh ] && source $HOME/git/fzf/shell/completion.zsh 
-[ -f $HOME/git/fzf/shell/key-bindings.zsh ] && source $HOME/git/fzf/shell/key-bindings.zsh 
+# FZF
+#[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+#[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+#[ -f $HOME/git/fzf/shell/completion.zsh ] && source $HOME/git/fzf/shell/completion.zsh 
+#[ -f $HOME/git/fzf/shell/key-bindings.zsh ] && source $HOME/git/fzf/shell/key-bindings.zsh 
+
+# SKIM
+[ -f /usr/share/skim/completion.zsh ] && source /usr/share/skim/completion.zsh
+[ -f /usr/share/skim/key-bindings.zsh ] && source /usr/share/skim/key-bindings.zsh
+
 # source <(cod init $$ zsh)
 
 # Load zsh-syntax-highlighting; should be last.

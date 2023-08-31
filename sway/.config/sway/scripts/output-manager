@@ -22,6 +22,10 @@ if [ "$(cat /etc/hostname)" = "hex" ]; then
 		mode 3440x1440@99.982Hz \
 		position 0 0 \
 		adaptive_sync off
+	swaymsg output DP-1 \
+		mode 3440x1440@99.982Hz \
+		position 0 0 \
+		adaptive_sync off
 	#AOC 1080p@75.025Hz
 	swaymsg output HDMI-A-1 \
 		resolution 1920x1080@75.025Hz \

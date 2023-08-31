@@ -22,6 +22,10 @@ alias \
 	xs="xbps-query -Rs"
 alias ssv="sudo sv"
 ###########
+alias \
+	psyu="sudo pacman -Syu" \
+	pss="sudo pacman -Ss" \
+	psyu="sudo pacman -Syu"
 
 alias gcm="git commit -m"
 
