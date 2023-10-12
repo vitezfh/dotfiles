@@ -1,4 +1,4 @@
 #!/bin/sh
 
-TO_DEPLOY="bspwm scripts media kitty editor ascii ssh sway zsh uni_desktop"
+TO_DEPLOY="hyprland bspwm scripts media kitty editor ascii ssh sway zsh uni_desktop"
 SWAY_THEME=dark
