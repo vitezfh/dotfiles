@@ -69,22 +69,22 @@ set $fzf fzf -i --cycle
 set $menu $scriptdir/menu
 
 #exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
-exec pipewire
+#exec pipewire
 #exec a2ln 6565
 #exec blueman-applet
 exec xrdb -load ~/.Xresources
 exec dbus-update-activation-environment --all
 
-exec export $(gnome-keyring-daemon --replace --components=secrets)
+#exec export $(gnome-keyring-daemon --replace --components=secrets)
 
 # Notification Daemon
 # exec_always BECAUSE you get multiple instances of running instances, or
 # if just exec, you get no mako at all...
 #exec pkill mako
-exec mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
+#exec mako --height=300 --width=400 --font=Hack --background-color='#00000066' --border-size=0
 
 #exec pkill dbus-daemon
-exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
+#exec dbus-daemon --session --address=unix:path=$XDG_RUNTIME_DIR/bus
 
 # Borders and gaps
 default_border pixel 2

@@ -1,439 +1,6 @@
 // vim:ft=json
 
 [{
-	"layer": "top",
-	"output": "eDP-1",
-	"position": "bottom",
-
-	"modules-left": [
-		"wlr/workspaces",
-		"sway/mode",
-		//	"mpd",
-		"network",
-		"tray",
-                "custom/playing",
-                "custom/rofi_bluetooth"
-	],
-
-	"modules-center": [
-		"clock#1"
-	],
-
-	"modules-right": [
-		//	"idle_inhibitor",
-		"sway/language",
-		"pulseaudio",
-		"cpu",
-		"memory",
-		"battery",
-		//	"disk",
-		"temperature"
-		//	"wlr/taskbar"
-	],
-
-	"wlr/taskbar": {
-		"format": "{icon}",
-		"icon-size": 14,
-		"icon-theme": "Numix-Circle",
-		"tooltip-format": "{title} [{app_id}]",
-		"on-click": "activate",
-		"on-click-middle": "close"
-	},
-
-	"wlr/workspaces": {
-		"disable-scroll": true,
-		"format": "{name}"
-	},
-
-	"sway/mode": {
-		"format": " |{}|",
-		"max-length": 50
-	},
-
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"format-icons": {
-			"activated": "",
-			"deactivated": ""
-		}
-	},
-
-	"mpd": {
-		"format": " {stateIcon} 🎶",
-		"format-disconnected": "d/c ",
-		"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} ",
-		"max-length": 60,
-		"interval": 2,
-		"consume-icons": {
-			"on": " " // Icon shows only when "consume" is on
-		},
-		"random-icons": {
-			"off": "<span color=\"#222222\"></span> ", // Icon grayed out when "random" is off
-			"on": " "
-		},
-		"repeat-icons": {
-			"on": " "
-		},
-		"single-icons": {
-			"on": "1 "
-		},
-		"state-icons": {
-			"paused": "",
-			"playing": ""
-		},
-		"tooltip-format": "{title}",
-		"tooltip-format-disconnected": "MPD (disconnected)"
-	},
-
-	"network": {
-		//"format": "{ifname}",
-		"format-wifi": "  {signalStrength}%",
-		"format-icons": [
-			"▁",
-			"▂",
-			"▃",
-			"▄",
-			"▅",
-			"▆",
-			"▇",
-			"█"
-		],
-		"format-ethernet": " ",
-		"format-disconnected": " ✞", //An empty format will hide the module.
-		"tooltip-format": "{ifname}",
-		"tooltip-format-wifi": "'{essid}' - {ipaddr}",
-		"tooltip-format-ethernet": "{ifname}",
-		"tooltip-format-disconnected": "Disconnected",
-		"max-length": 50
-	},
-
-	"clock#1": {
-		"format": "{:%d-%m-%y | %H:%M | w%V: %a}",
-		"tooltip": false
-	},
-
-	"pulseaudio": {
-		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%",
-		"format-muted": "🔇",
-		"format-icons": {
-			"headphones": "🎧",
-			"default": [
-				"🔉",
-				"🔊"
-			]
-		},
-		"scroll-step": 5,
-		"on-click": "pulsemixer",
-		"on-click-right": "pulsemixer"
-	},
-
-	"memory": {
-		"format": " {}%",
-		"interval": 5
-	},
-
-	"cpu": {
-		"interval": 5,
-		"format": " {usage:2}%"
-	},
-
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			""
-		]
-	},
-	// "disk": {
-		//	"interval": 5,
-		//	"format": "🖭 {percentage_used:2}%",
-		//	"path": "/"
-		//},
-		"tray": {
-			"icon-size": 40,
-			"spacing": 7,
-                        "margin-right": 7
-		},
-
-		"sway/language": {
-			"format": "🄻 {}",
-			"max-length": 50
-		},
-
-		"temperature": {
-			// "thermal-zone": 2,
-			//"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-			"hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
-			// "critical-threshold": 80,
-			// "format-critical": "{temperatureC}°C ",
-			"format": "{temperatureC}°C "
-		},
-                "custom/playing": {
-                        "format": "{}",
-                        "exec": "playerctl metadata -F xesam:title",
-                        "max-length": 40
-		},
-                "custom/rofi_bluetooth": {
-                        "format": " {}",
-                        "exec": "rofi-bluetooth --status",
-												"on-click": "rofi-bluetooth",
-                        "max-length": 3
-}
-
-
-}, {
-"layer": "top",
-"name": "side2",
-"output": [
-	"DP-1",
-	"HDMI-A-1",
-	"DP-2",
-	"DP-4"
-],
-"position": "left",
-"modules-left": [
-	"wlr/workspaces"
-],
-"modules-right": [
-	"custom/rofi",
-	"custom/yee",
-	"custom/ddc"
-],
-}, {
-"layer": "top",
-"name": "side1",
-"output": [
-      "DP-3",
-      "HEADLESS-1"
-    ],
-"position": "right",
-"modules-left": [
-	"wlr/workspaces"
-],
-
-"modules-right": [
-	"custom/rofi",
-	"custom/yee",
-	"custom/ddc"
-],
-
-"wlr/workspaces": {
-	"disable-scroll": true,
-	"format": "{name}"
-},
-
-
-"custom/yee": {
-	"format": "🔮",
-	"on-click": "./.config/waybar/yee.sh"
-},
-
-"custom/rofi": {
-	"format": "↲",
-	"on-click": "rofi -show run"
-},
-
-"custom/ddc": {
-	"format": "🟓",
-	"on-click": "./.config/waybar/ddc.sh"
-}
-}]
-
-[
-  {
-    "layer": "top",
-    "output": "eDP-1",
-    "position": "bottom",
-    "modules-left": [
-      "wlr/workspaces",
-      "sway/mode",
-      //	"mpd",
-      "network",
-      "tray",
-      "custom/playing",
-      "custom/rofi_bluetooth",
-      "custom/yee"
-    ],
-    "modules-center": [
-      "clock#1"
-    ],
-    "modules-right": [
-      //	"idle_inhibitor",
-      "sway/language",
-      "pulseaudio",
-      "cpu",
-      "memory",
-      "battery",
-      //	"disk",
-      "temperature"
-      //	"wlr/taskbar"
-    ],
-    "wlr/taskbar": {
-      "format": "{icon}",
-      "icon-size": 14,
-      "icon-theme": "Numix-Circle",
-      "tooltip-format": "{title} [{app_id}]",
-      "on-click": "activate",
-      "on-click-middle": "close"
-    },
-    "wlr/workspaces": {
-      "disable-scroll": true,
-      "format": "{name}"
-    },
-    "sway/mode": {
-      "format": " |{}|",
-      "max-length": 50
-    },
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      }
-    },
-    "mpd": {
-      "format": " {stateIcon} 🎶",
-      "format-disconnected": "d/c ",
-      "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon} ",
-      "max-length": 60,
-      "interval": 2,
-      "consume-icons": {
-        "on": " " // Icon shows only when "consume" is on
-      },
-      "random-icons": {
-        "off": "<span color=\"#222222\"></span> ", // Icon grayed out when "random" is off
-        "on": " "
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "{title}",
-      "tooltip-format-disconnected": "MPD (disconnected)"
-    },
-    "network": {
-      //"format": "{ifname}",
-      "format-wifi": "  {signalStrength}%",
-      "format-icons": [
-        "▁",
-        "▂",
-        "▃",
-        "▄",
-        "▅",
-        "▆",
-        "▇",
-        "█"
-      ],
-      "format-ethernet": " ",
-      "format-disconnected": " ✞", //An empty format will hide the module.
-      "tooltip-format": "{ifname}",
-      "tooltip-format-wifi": "'{essid}' - {ipaddr}",
-      "tooltip-format-ethernet": "{ifname}",
-      "tooltip-format-disconnected": "Disconnected",
-      "max-length": 50
-    },
-    "clock#1": {
-      "format": "{:%d-%m-%y | %H:%M | w%V: %a}",
-      "tooltip": false
-    },
-    "pulseaudio": {
-      "format": "{icon} {volume:2}%",
-      "format-bluetooth": "{icon}  {volume}%",
-      "format-muted": "🔇",
-      "format-icons": {
-        "headphones": "🎧",
-        "default": [
-          "🔉",
-          "🔊"
-        ]
-      },
-      "scroll-step": 5,
-      "on-click": "pulsemixer",
-      "on-click-right": "pulsemixer"
-    },
-    "memory": {
-      "format": " {}%",
-      "interval": 5
-    },
-    "cpu": {
-      "interval": 5,
-      "format": " {usage:2}%"
-    },
-    "battery": {
-      "states": {
-        "good": 95,
-        "warning": 30,
-        "critical": 15
-      },
-      "format": "{icon} {capacity}%",
-      "format-icons": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ]
-    },
-    // "disk": {
-    //	"interval": 5,
-    //	"format": "🖭 {percentage_used:2}%",
-    //	"path": "/"
-    //},
-    "tray": {
-      "icon-size": 20,
-      "spacing": 7,
-      "margin-right": 7
-    },
-    "sway/language": {
-      "format": "🄻 {}",
-      "max-length": 50
-    },
-    "temperature": {
-      // "thermal-zone": 2,
-      //"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-      "hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
-      // "critical-threshold": 80,
-      // "format-critical": "{temperatureC}°C ",
-      "format": "{temperatureC}°C "
-    },
-    "custom/playing": {
-      "format": "{}",
-      "exec": "playerctl metadata -F xesam:title",
-      "max-length": 40
-    },
-    "custom/rofi_bluetooth": {
-      "format": " {}",
-      "exec": "rofi-bluetooth --status",
-      "on-click": "rofi-bluetooth",
-      "max-length": 3
-    }
-  },
-  {
     "layer": "top",
     "name": "side2",
     "output": [
@@ -453,25 +20,46 @@
   {
     "layer": "top",
     "name": "side1",
-    "output": "DP-3",
+    "output": "DP-1",
     "position": "right",
     "modules-left": [
       "wlr/workspaces"
     ],
     "modules-right": [
+      "custom/rofi",
       "custom/yee",
       "custom/ddc"
-    ],
+    ], 
+    "gamemode": {
+    "format": "{glyph}",
+    "format‐alt": "{glyph} {count}",
+    "glyph": "<U+F7B3>",
+    "hide‐not‐running": true,
+    "use‐icon": true,
+    "icon‐name": "input‐gaming‐symbolic",
+    "icon‐spacing": 4,
+    "icon‐size": 20,
+    "tooltip": true,
+    "tooltip‐format": "Games running: {count}"
+    },
+    "memory": {
+    "interval": 30,
+    "format": "{used:0.1f}G/{total:0.1f}G <U+F0C9>"
+    },
     "wlr/workspaces": {
       "disable-scroll": true,
       "format": "{name}"
+    },
+    "custom/rofi": {
+      "format": "🚀",
+      "on-click": "rofi -show run"
     },
     "custom/yee": {
       "format": "🔮",
       "on-click": "./.config/waybar/yee.sh"
     },
     "custom/ddc": {
-      "format": "🟓",
+      "format": "☀️",
       "on-click": "./.config/waybar/ddc.sh"
     }
   }

@@ -33,5 +33,6 @@ if [ "$(cat /etc/hostname)" = "hex" ]; then
 	#position 0 0
 	#swaymsg create_output HEADLESS-1
 	#swaymsg output HEADLESS-1 \
-	#mode 2400x1080@90Hz
+	#	mode 1920x1080@60Hz
+	#sunshine_sway
 fi
