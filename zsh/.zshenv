@@ -17,7 +17,7 @@ export MOZ_ENABLE_WAYLAND=1
 export VIRSH_DEFAULT_CONNECT_URI="qemu:///system"
 
 
-#export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 
 
 #export LIBVA_DRIVER_NAME=nvidia

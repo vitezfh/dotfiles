@@ -23,9 +23,9 @@ alias \
 alias ssv="sudo sv"
 ###########
 alias \
-	psyu="sudo pacman -Syu" \
-	pss="sudo pacman -Ss" \
-	psyu="sudo pacman -Syu"
+	pacsyu="sudo pacman -Syu" \
+	pacss="sudo pacman -Ss" \
+	pacre="sudo pacman -R"
 
 alias gcm="git commit -m"
 
