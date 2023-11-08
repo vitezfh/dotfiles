@@ -76,6 +76,12 @@ exec xrdb -load ~/.Xresources
 exec dbus-update-activation-environment --all
 exec copyq
 exec swaync
+exec swayidle -w \
+      timeout 995 'notify-send Warning: Screen(s) turn off in 5 seconds...' \
+      timeout 1000 'swaymsg "output * dpms off"' \
+      timeout 2200 'systemctl suspend' \
+      resume 'swaymsg "output * dpms on"'
+
 #exec export $(gnome-keyring-daemon --replace --components=secrets)
 
 # Notification Daemon

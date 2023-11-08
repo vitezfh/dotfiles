@@ -20,16 +20,18 @@ if [ "$(cat /etc/hostname)" = "hex" ]; then
 	#AOC 3440x1440@99.982Hz
 	swaymsg output DP-3 \
 		mode 3440x1440@99.982Hz \
-		position 0 0 \
-		adaptive_sync off
+		adaptive_sync off \
+		position 1920 0
+
 	swaymsg output DP-1 \
 		mode 3440x1440@99.982Hz \
-		position 0 0 \
-		adaptive_sync off
+		adaptive_sync off \
+		position 1920 0
 	#AOC 1080p@75.025Hz
 	swaymsg output HDMI-A-1 \
 		resolution 1920x1080@75.025Hz \
-		adaptive_sync off
+		adaptive_sync off \
+		position 0 600
 	#position 0 0
 	#swaymsg create_output HEADLESS-1
 	#swaymsg output HEADLESS-1 \

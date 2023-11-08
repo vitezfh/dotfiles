@@ -78,3 +78,6 @@ export TERM=xterm-256color
 #fi
 # source /home/vitezfh/.config/broot/launcher/bash/br
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
