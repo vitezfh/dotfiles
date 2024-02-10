@@ -237,6 +237,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+p exec grim -g "$(slurp -d)" - | wl-copy -t "image/png"
+bindsym $mod+Shift+c exec grim -g "$(slurp)" - | tesseract - - | wl-copy
+bindsym $mod+Shift+x exec grim -g "$(slurp)" - | tesseract - - | calc -p | wl-copy
 
 #bindsym XF86Explorer exec $HOME/.scripts/switch
 #bindsym $mod+Escape exec $HOME/.scripts/switch
